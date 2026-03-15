@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export function useCsReveal() {
   useEffect(() => {
@@ -133,9 +134,10 @@ export function ResGrid({ items, bg, numColor, mutedColor, accent, ruleBg }: { i
   )
 }
 
-export function NextProject({ title: rawTitle, cat, accent, bg, hoverBg, textColor, mutedColor }: { title: string; cat: string; accent: string; bg: string; hoverBg: string; textColor: string; mutedColor: string }) {
+export function NextProject({ title: rawTitle, cat, accent, bg, hoverBg, textColor, mutedColor, href = '/' }: { title: string; cat: string; accent: string; bg: string; hoverBg: string; textColor: string; mutedColor: string; href?: string }) {
+  const navigate = useNavigate()
   return (
-    <a href="/" className="next-link cursor-none no-underline transition-colors duration-400"
+    <a href={href} onClick={e => { e.preventDefault(); navigate(href) }} className="next-link cursor-none no-underline transition-colors duration-400"
       style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'center', gap: 64, background: bg, padding: '80px 56px', borderTop: `1px solid rgba(245,240,232,.07)` }}
       onMouseEnter={e => (e.currentTarget.style.background = hoverBg)}
       onMouseLeave={e => (e.currentTarget.style.background = bg)}

@@ -144,7 +144,7 @@ export default function ProductDesign() {
           ]} />
       </section>
 
-      <NextProject title="Cipher *UI* System" cat="UI / UX Design · SaaS" accent={accent} bg={mid} hoverBg={card} textColor={white} mutedColor={muted} />
+      <NextProject title="Cipher *UI* System" cat="UI / UX Design · SaaS" accent={accent} bg={mid} hoverBg={card} textColor={white} mutedColor={muted} href="/case-studies/ui-ux" />
       <CsFooter accentColor={accent} bgColor={bg} ruleColor={rule} textColor={white} mutedColor={muted} copyOpacity="rgba(245,240,232,.18)" />
     </div>
   )

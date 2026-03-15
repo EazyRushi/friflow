@@ -148,7 +148,7 @@ export default function PackagingDesign() {
           ]} />
       </section>
 
-      <NextProject title="Aurore *Beauty* Rebrand" cat="Brand Identity · Naming" accent={accent} bg={invBg} hoverBg="#1c1a18" textColor="#F5F0E8" mutedColor={invMuted} />
+      <NextProject title="Aurore *Beauty* Rebrand" cat="Brand Identity · Naming" accent={accent} bg={invBg} hoverBg="#1c1a18" textColor="#F5F0E8" mutedColor={invMuted} href="/case-studies/brand-identity" />
       <CsFooter accentColor={accent} bgColor={invBg} ruleColor={invRule} textColor="#F5F0E8" mutedColor={invMuted} copyOpacity="rgba(245,240,232,.18)" />
     </div>
   )

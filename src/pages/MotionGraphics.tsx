@@ -163,7 +163,7 @@ export default function MotionGraphics() {
           ]} />
       </section>
 
-      <NextProject title="Aurore *Beauty* Rebrand" cat="Packaging Design · Brand Identity" accent={accent} bg={mid} hoverBg={card} textColor={white} mutedColor={muted} />
+      <NextProject title="Aurore *Beauty* Rebrand" cat="Packaging Design · Brand Identity" accent={accent} bg={mid} hoverBg={card} textColor={white} mutedColor={muted} href="/case-studies/brand-identity" />
       <CsFooter accentColor={accent} bgColor={bg} ruleColor={rule} textColor={white} mutedColor={muted} copyOpacity="rgba(240,238,255,.15)" />
     </div>
   )

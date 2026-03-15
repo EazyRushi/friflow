@@ -26,11 +26,19 @@ export default function CsNavbar({
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const goHome = (hash: string) => (e: React.MouseEvent) => {
+    e.preventDefault()
+    navigate('/')
+    setTimeout(() => {
+      document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 80)
+  }
+
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-[100] px-14 flex items-center justify-between transition-all duration-400"
+      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between transition-all duration-400"
       style={{
-        padding: '28px 56px',
+        padding: '22px 56px',
         background: scrolled ? (bgScrolled || 'rgba(8,8,8,.94)') : 'transparent',
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
       }}
@@ -39,20 +47,32 @@ export default function CsNavbar({
         <FriflowLogo color={accentColor} width={32} height={26} />
         <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: 300, fontSize: 20, letterSpacing: 1, color: textColor }}>friflow</span>
       </a>
-      <a href="/" onClick={e => { e.preventDefault(); navigate('/') }} className="cursor-none no-underline flex items-center gap-2.5 transition-colors duration-300"
-        style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: mutedColor }}
-        onMouseEnter={e => (e.currentTarget.style.color = accentColor)}
-        onMouseLeave={e => (e.currentTarget.style.color = mutedColor)}
-      >
-        <span className="nav-back-line" />
-        All Work
-      </a>
-      <a href="mailto:hello@friflow.studio"
-        className="cursor-none no-underline font-medium transition-colors duration-300"
-        style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: ctaTextColor, background: accentColor, padding: '10px 24px' }}
-        onMouseEnter={e => { e.currentTarget.style.background = '#F5F0E8'; e.currentTarget.style.color = '#080808' }}
-        onMouseLeave={e => { e.currentTarget.style.background = accentColor; e.currentTarget.style.color = ctaTextColor }}
-      >Start a Project</a>
+      <div className="flex items-center gap-8">
+        {([['#work','Work'],['#services','Services'],['#about','Studio'],['#contact','Contact']] as [string,string][]).map(([hash, label]) => (
+          <a key={hash} href={`/${hash}`} onClick={goHome(hash)}
+            className="cursor-none no-underline transition-colors duration-250"
+            style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: mutedColor }}
+            onMouseEnter={e => (e.currentTarget.style.color = accentColor)}
+            onMouseLeave={e => (e.currentTarget.style.color = mutedColor)}
+          >{label}</a>
+        ))}
+      </div>
+      <div className="flex items-center gap-6">
+        <a href="/" onClick={e => { e.preventDefault(); navigate('/') }} className="cursor-none no-underline flex items-center gap-2.5 transition-colors duration-300"
+          style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: mutedColor }}
+          onMouseEnter={e => (e.currentTarget.style.color = accentColor)}
+          onMouseLeave={e => (e.currentTarget.style.color = mutedColor)}
+        >
+          <span className="nav-back-line" />
+          All Work
+        </a>
+        <a href="mailto:hello@friflow.studio"
+          className="cursor-none no-underline font-medium transition-colors duration-300"
+          style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: ctaTextColor, background: accentColor, padding: '10px 24px' }}
+          onMouseEnter={e => { e.currentTarget.style.background = '#F5F0E8'; e.currentTarget.style.color = '#080808' }}
+          onMouseLeave={e => { e.currentTarget.style.background = accentColor; e.currentTarget.style.color = ctaTextColor }}
+        >Start a Project</a>
+      </div>
     </nav>
   )
 }

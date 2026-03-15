@@ -162,7 +162,7 @@ export default function GraphicDesign() {
           ]} />
       </section>
 
-      <NextProject title="Cipher *UI* System" cat="UI / UX Design · SaaS" accent={accent} bg={invBg} hoverBg="#1c1a18" textColor="#F5F0E8" mutedColor={invMuted} />
+      <NextProject title="Cipher *UI* System" cat="UI / UX Design · SaaS" accent={accent} bg={invBg} hoverBg="#1c1a18" textColor="#F5F0E8" mutedColor={invMuted} href="/case-studies/ui-ux" />
       <CsFooter accentColor={accent} bgColor={invBg} ruleColor={invRule} textColor="#F5F0E8" mutedColor={invMuted} copyOpacity="rgba(245,240,232,.18)" />
     </div>
   )

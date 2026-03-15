@@ -179,7 +179,7 @@ export default function BrandIdentity() {
           ]} />
       </section>
 
-      <NextProject title="Roots & *Ritual* Identity" cat="Graphic Design · Print" accent={accent} bg={invBg} hoverBg="#1c1a18" textColor="#F5F0E8" mutedColor={invMuted} />
+      <NextProject title="Roots & *Ritual* Identity" cat="Graphic Design · Print" accent={accent} bg={invBg} hoverBg="#1c1a18" textColor="#F5F0E8" mutedColor={invMuted} href="/case-studies/graphic-design" />
       <CsFooter accentColor={accent} bgColor={invBg} ruleColor={invRule} textColor="#F5F0E8" mutedColor={invMuted} copyOpacity="rgba(245,240,232,.18)" />
     </div>
   )
