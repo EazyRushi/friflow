@@ -51,7 +51,7 @@ export default function MotionGraphics() {
         </div>
       </section>
 
-      <Strip bg={bg} numColor={white} labelColor={muted} ruleBg={rule}
+      <Strip bg={bg} numColor={white} labelColor={muted} ruleBg={rule} accent={accent}
         items={[{ val: '90s', label: 'Brand Film Length' }, { val: '24+', label: 'Social Assets' }, { val: '2.4M', label: 'Views in 30 Days' }, { val: '↑3×', label: 'Investor Enquiries' }]} />
 
       {/* BRIEF */}

@@ -47,7 +47,7 @@ export default function GraphicDesign() {
       </section>
 
       {/* STRIP */}
-      <Strip bg={bg} numColor={deep} labelColor={muted} ruleBg={rule}
+      <Strip bg={bg} numColor={deep} labelColor={muted} ruleBg={rule} accent={accent}
         items={[{ val: '6', label: 'SKU Designs' }, { val: '2×', label: 'Reorder Rate' }, { val: '18k', label: 'Print Run — Launch' }, { val: '↑55%', label: 'Retailer Pick-up' }]} />
 
       {/* BRIEF */}

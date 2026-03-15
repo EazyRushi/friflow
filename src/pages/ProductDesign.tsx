@@ -46,7 +46,7 @@ export default function ProductDesign() {
         </div>
       </section>
 
-      <Strip bg={bg} numColor={white} labelColor={muted} ruleBg={rule}
+      <Strip bg={bg} numColor={white} labelColor={muted} ruleBg={rule} accent={accent}
         items={[{ val: '4+', label: 'Prototypes Built' }, { val: '38%', label: 'Lighter Than Prev.' }, { val: '0', label: 'Button Presses to Use' }, { val: '★4.9', label: 'User Testing Score' }]} />
 
       {/* CHALLENGE */}

@@ -57,7 +57,7 @@ export default function UIUX() {
         </div>
       </section>
 
-      <Strip bg={bg} numColor={white} labelColor={muted} ruleBg={rule}
+      <Strip bg={bg} numColor={white} labelColor={muted} ruleBg={rule} accent={accent}
         items={[{ val: '−42%', label: 'Task Completion Time' }, { val: '94', label: 'SUS Score' }, { val: '380+', label: 'Components Built' }, { val: '↓68%', label: 'Support Tickets' }]} />
 
       {/* PROBLEM */}

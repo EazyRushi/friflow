@@ -51,7 +51,7 @@ export function Strip({ items, bg, numColor, labelColor, ruleBg, accent }: { ite
 }
 
 // Section label
-export function SLabel({ text, accent, ruleColor }: { text: string; accent: string; ruleColor: string }) {
+export function SLabel({ text, ruleColor }: { text: string; accent?: string; ruleColor: string }) {
   return (
     <div className="flex items-center gap-3.5" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 40 }}>
       {text}
@@ -61,7 +61,7 @@ export function SLabel({ text, accent, ruleColor }: { text: string; accent: stri
 }
 
 // Section heading
-export function SH({ children, accent, textColor, style }: { children: React.ReactNode; accent: string; textColor: string; style?: React.CSSProperties }) {
+export function SH({ children, textColor, style }: { children: React.ReactNode; accent?: string; textColor: string; style?: React.CSSProperties }) {
   return (
     <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(28px,3.5vw,48px)', letterSpacing: -1.5, lineHeight: 1, marginBottom: 28, color: textColor, ...style }}>
       {children}
@@ -122,7 +122,7 @@ export function DelGrid({ items, bg, hoverBg, textColor, mutedColor, accent }: {
 
 // Results grid
 interface ResItem { num: string; label: string; desc: string }
-export function ResGrid({ items, bg, numColor, mutedColor, accent, ruleBg }: { items: ResItem[]; bg: string; numColor: string; mutedColor: string; accent: string; ruleBg: string }) {
+export function ResGrid({ items, bg, numColor, mutedColor, accent, ruleBg: _ruleBg }: { items: ResItem[]; bg: string; numColor: string; mutedColor: string; accent: string; ruleBg: string }) {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 3, marginTop: 48 }}>
       {items.map((r, i) => (
