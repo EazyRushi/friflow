@@ -21,7 +21,7 @@ export default function UIUX() {
       <CsNavbar accentColor={accent} bgScrolled="rgba(6,8,15,.94)" textColor={white} mutedColor={muted} ctaTextColor={bg} />
 
       {/* HERO */}
-      <section style={{ minHeight: '100vh', display: 'grid', gridTemplateRows: '1fr auto', padding: '0 56px 72px', position: 'relative', overflow: 'hidden' }}>
+      <section className="px-6 pb-12 md:px-14 md:pb-16" style={{ minHeight: '100vh', display: 'grid', gridTemplateRows: '1fr auto', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 60% 40%,#0a1a2e 0%,#060810 60%,#06080f 100%)', zIndex: 0 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom,rgba(6,8,15,.2) 0%,transparent 35%,transparent 55%,rgba(6,8,15,.95) 100%)', zIndex: 1 }} />
         <div className="hero-scanlines" style={{ position: 'absolute', inset: 0, zIndex: 1 }} />
@@ -38,11 +38,11 @@ export default function UIUX() {
             <div style={{ background: 'rgba(79,255,176,.04)', border: '1px solid rgba(79,255,176,.06)' }} />
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 140, position: 'relative', zIndex: 2 }}>
+        <div className="flex justify-between items-start" style={{ paddingTop: 140, position: 'relative', zIndex: 2 }}>
           <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: accent, border: `1px solid rgba(79,255,176,.3)`, padding: '10px 20px' }}>◎ &nbsp;UI / UX Design</div>
           <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: muted, border: `1px solid ${rule}`, padding: '10px 20px' }}>2025</div>
         </div>
-        <div style={{ position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'end', gap: 64 }}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-end gap-8 md:gap-16" style={{ position: 'relative', zIndex: 2 }}>
           <div>
             <p className="flex items-center gap-4" style={{ fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: muted, marginBottom: 20 }}>
               <span style={{ width: 32, height: 1, background: accent, flexShrink: 0 }} />Case Study — 04
@@ -61,8 +61,8 @@ export default function UIUX() {
         items={[{ val: '−42%', label: 'Task Completion Time' }, { val: '94', label: 'SUS Score' }, { val: '380+', label: 'Components Built' }, { val: '↓68%', label: 'Support Tickets' }]} />
 
       {/* PROBLEM */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}` }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 80, alignItems: 'start' }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}` }}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-10 md:gap-20 items-start">
           <div className="reveal">
             <SLabel text="01 · The Problem" accent={accent} ruleColor={rule} />
             <SH accent={accent} textColor={white}>A powerful tool<br />nobody could <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>use.</em></SH>
@@ -81,7 +81,7 @@ export default function UIUX() {
             <span style={{ position: 'relative', zIndex: 1, marginTop: 120, fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', color: 'rgba(79,255,176,.2)' }}>Before State — Legacy UI</span>
           </VBox>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 3, marginTop: 56 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[3px] mt-14">
           {[['68%','Error Rate','Of users made at least one critical input error per session before the redesign.'],['4w','Avg. Onboarding','New users required 4 weeks of training before operating independently on core tasks.'],['32','User Interviews','We spoke with accountants, CFOs, and data analysts across 8 client companies.']].map(([stat, label, desc], i) => (
             <div key={label} className={`rg-card reveal rd${i + 1}`} style={{ background: card, padding: '32px 28px', borderTop: `2px solid ${accent}` }}>
               <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 40, fontWeight: 800, letterSpacing: -1.5, color: white, marginBottom: 8 }}>
@@ -101,7 +101,7 @@ export default function UIUX() {
       <FullImg bg="linear-gradient(135deg,#040810,#0a1428,#040810)" gridColor="rgba(79,255,176,.04)" label="Full platform overview — replace with dashboard screenshot" />
 
       {/* PROCESS */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: mid }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: mid }}>
         <SLabel text="02 · Process" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={white} style={{ maxWidth: 560 }}>Research first.<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>Always.</em></SH>
         <ProcessGrid accent={accent} bg={bg} textColor={white} mutedColor={muted} ruleBg={rule}
@@ -114,7 +114,7 @@ export default function UIUX() {
       </section>
 
       {/* USER FLOW */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: card }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: card }}>
         <SLabel text="03 · User Flow Redesign" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={white} style={{ maxWidth: 540 }}>From 11 steps<br />to <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>3.</em></SH>
         <p className="reveal" style={{ fontSize: 14, lineHeight: 1.9, color: muted, maxWidth: 560, marginBottom: 0 }}>The most common task — reconciling a batch transaction — required 11 steps across 4 screens in the old system. The redesigned flow completes in 3 steps on one screen.</p>
@@ -133,8 +133,8 @@ export default function UIUX() {
       </section>
 
       {/* IMAGE GRIDS */}
-      <section style={{ padding: '3px 0 0', borderBottom: `1px solid ${rule}` }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 3, marginBottom: 3 }}>
+      <section style={{ paddingTop: 3, borderBottom: `1px solid ${rule}` }}>
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-[3px] mb-[3px]">
           <VBox bg="linear-gradient(135deg,#080c18,#0c1428)" style={{ aspectRatio: '16/10' }}>
             <div style={{ position: 'absolute', inset: 16, border: '1px solid rgba(79,255,176,.08)', background: 'rgba(79,255,176,.02)' }}>
               <div style={{ height: 24, background: 'rgba(79,255,176,.05)', borderBottom: '1px solid rgba(79,255,176,.06)', display: 'flex', alignItems: 'center', padding: '0 12px', gap: 6 }}>
@@ -146,12 +146,12 @@ export default function UIUX() {
             </div>
             <span style={{ position: 'relative', zIndex: 1, marginTop: 100, fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', color: 'rgba(79,255,176,.2)' }}>Dashboard — Main View</span>
           </VBox>
-          <div style={{ display: 'grid', gap: 3 }}>
+          <div className="grid gap-[3px]">
             <VBox bg="linear-gradient(135deg,#0c1020,#141830)" label="Mobile View — Summary" style={{ flex: 1, minHeight: 200 }} />
             <VBox bg="linear-gradient(135deg,#060810,#0a1020)" label="Component Library" style={{ flex: 1, minHeight: 200 }} />
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[3px]">
           <VBox bg="linear-gradient(135deg,#060810,#0a1020)" label="Transaction Flow" style={{ aspectRatio: '4/3' }} />
           <VBox bg="linear-gradient(135deg,#0c1020,#141830)" label="Analytics Module" style={{ aspectRatio: '4/3' }} />
         </div>
@@ -160,7 +160,7 @@ export default function UIUX() {
       <PullQuote accent={accent} bgColor={accent} textColor={bg} text={`"Our support team went from firefighting daily to handling one or two tickets a week. The redesign didn't just improve the UX — it changed how the company runs."`} author="James Osei — CTO, Cipher Financial" />
 
       {/* DELIVERABLES */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: mid }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: mid }}>
         <SLabel text="04 · Deliverables" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={white} style={{ maxWidth: 480 }}>Everything we <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>built.</em></SH>
         <DelGrid accent={accent} bg={charcoal} hoverBg={accent} textColor={white} mutedColor={muted}
@@ -175,7 +175,7 @@ export default function UIUX() {
       </section>
 
       {/* RESULTS */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}` }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}` }}>
         <SLabel text="05 · Results" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={white} style={{ maxWidth: 500 }}>Numbers that <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>matter.</em></SH>
         <ResGrid accent={accent} bg={mid} numColor={white} mutedColor={muted} ruleBg={rule}
