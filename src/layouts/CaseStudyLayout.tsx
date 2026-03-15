@@ -61,7 +61,8 @@ export function SLabel({ text, accent, ruleColor }: { text: string; accent: stri
 }
 
 // Section heading
-export function SH({ children, textColor, style }: { children: React.ReactNode; textColor: string; style?: React.CSSProperties }) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function SH({ children, accent: _accent, textColor, style }: { children: React.ReactNode; accent?: string; textColor: string; style?: React.CSSProperties }) {
   return (
     <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(28px,3.5vw,48px)', letterSpacing: -1.5, lineHeight: 1, marginBottom: 28, color: textColor, ...style }}>
       {children}
