@@ -25,18 +25,19 @@ export default function Services() {
   const rule = 'rgba(245,240,232,0.07)'
 
   return (
-    <section id="services" style={{ padding: '112px 56px', borderBottom: `1px solid ${rule}` }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'end', marginBottom: 72 }}>
+    <section id="services" className="px-6 py-16 md:px-14 md:py-24 lg:px-14 lg:py-28" style={{ borderBottom: `1px solid ${rule}` }}>
+      {/* Header */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-end mb-12 md:mb-16 lg:mb-[72px]">
         <div>
-          <p className="flex items-center gap-4 sec-label" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 48 }}>
+          <p className="flex items-center gap-4 sec-label" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 32 }}>
             01 · Services
           </p>
-          <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(36px,5vw,64px)', letterSpacing: -2, lineHeight: .95, color: '#F5F0E8' }}>
+          <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(32px,5vw,64px)', letterSpacing: -2, lineHeight: .95, color: '#F5F0E8' }}>
             Every discipline.<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>One studio.</em>
           </h2>
         </div>
         <div>
-          <p className="reveal rd1" style={{ fontSize: 14, lineHeight: 1.9, color: muted, marginBottom: 20 }}>
+          <p className="reveal rd1" style={{ fontSize: 14, lineHeight: 1.9, color: muted, marginBottom: 16 }}>
             We cover the full spectrum of visual design — so you never have to brief three different agencies, manage three timelines, or explain your brand from scratch every time.
           </p>
           <p className="reveal rd2" style={{ fontSize: 14, lineHeight: 1.9, color: muted }}>
@@ -44,23 +45,25 @@ export default function Services() {
           </p>
         </div>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 3 }}>
+
+      {/* Cards grid: 1 col → 2 col → 3 col */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[3px]">
         {services.map((svc, i) => (
           <div key={svc.num}
             className={`svc-card reveal rd${(i % 3) + 1} cursor-none`}
-            style={{ background: '#161616', padding: '40px 36px 80px', position: 'relative' }}
+            style={{ background: '#161616', padding: '36px 28px 72px', position: 'relative' }}
             onClick={() => navigate(CS_ROUTES[svc.file])}
           >
-            <span className="svc-child" style={{ fontFamily: 'Syne, sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: 3, color: accent, marginBottom: 32, display: 'block', position: 'relative', zIndex: 1, transition: 'color .35s' }}>{svc.num}</span>
-            <div className="svc-child" style={{ fontFamily: 'Syne, sans-serif', fontSize: 22, fontWeight: 700, color: '#F5F0E8', marginBottom: 14, letterSpacing: -.4, position: 'relative', zIndex: 1, transition: 'color .35s' }}>{svc.name}</div>
-            <p className="svc-child" style={{ fontSize: 13, lineHeight: 1.8, color: muted, marginBottom: 28, position: 'relative', zIndex: 1, transition: 'color .35s' }}>{svc.desc}</p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32, position: 'relative', zIndex: 1 }}>
+            <span className="svc-child" style={{ fontFamily: 'Syne, sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: 3, color: accent, marginBottom: 28, display: 'block', position: 'relative', zIndex: 1, transition: 'color .35s' }}>{svc.num}</span>
+            <div className="svc-child" style={{ fontFamily: 'Syne, sans-serif', fontSize: 20, fontWeight: 700, color: '#F5F0E8', marginBottom: 12, letterSpacing: -.4, position: 'relative', zIndex: 1, transition: 'color .35s' }}>{svc.name}</div>
+            <p className="svc-child" style={{ fontSize: 13, lineHeight: 1.8, color: muted, marginBottom: 24, position: 'relative', zIndex: 1, transition: 'color .35s' }}>{svc.desc}</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 28, position: 'relative', zIndex: 1 }}>
               {svc.tags.map(tag => (
                 <span key={tag} className="svc-tag-el" style={{ fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', border: `1px solid ${rule}`, padding: '5px 12px', color: muted, transition: 'color .35s, border-color .35s' }}>{tag}</span>
               ))}
             </div>
             <div className="svc-arrow-el" style={{ width: 36, height: 36, background: accent, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, color: '#080808', position: 'relative', zIndex: 1, transition: 'background .35s, color .35s' }}>→</div>
-            <span className="svc-hint" style={{ position: 'absolute', bottom: 32, right: 36, fontSize: 8.5, letterSpacing: 3, textTransform: 'uppercase', color: 'rgba(245,240,232,.28)', zIndex: 2, transition: 'color .35s', display: 'flex', alignItems: 'center', gap: 8, pointerEvents: 'none' }}>
+            <span className="svc-hint" style={{ position: 'absolute', bottom: 28, right: 28, fontSize: 8.5, letterSpacing: 3, textTransform: 'uppercase', color: 'rgba(245,240,232,.28)', zIndex: 2, transition: 'color .35s', display: 'flex', alignItems: 'center', gap: 8, pointerEvents: 'none' }}>
               <span style={{ width: 14, height: 1, background: 'currentColor', flexShrink: 0 }} />
               View Case Study
             </span>

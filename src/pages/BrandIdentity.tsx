@@ -23,23 +23,23 @@ export default function BrandIdentity() {
       <CsNavbar accentColor={accent} bgScrolled="rgba(17,16,16,.94)" textColor="#F5F0E8" mutedColor={invMuted} ctaTextColor="#fff" />
 
       {/* HERO */}
-      <section style={{ minHeight: '100vh', display: 'grid', gridTemplateRows: '1fr auto', padding: '0 56px 72px', position: 'relative', overflow: 'hidden', background: invBg }}>
+      <section className="cs-hero px-6 pb-12 md:px-14 md:pb-16" style={{ minHeight: '100vh', display: 'grid', gridTemplateRows: '1fr auto', position: 'relative', overflow: 'hidden', background: invBg }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(150deg,#0a0804,#1e160a,#2a1e0c,#0a0804)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom,rgba(17,16,16,.2) 0%,transparent 35%,transparent 55%,rgba(17,16,16,.95) 100%)' }} />
         <div className="hero-halftone" style={{ position: 'absolute', inset: 0, opacity: .5 }} />
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 140, position: 'relative', zIndex: 2 }}>
-          <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: accent, border: `1px solid rgba(255,107,53,.3)`, padding: '10px 20px' }}>◎ &nbsp;Brand Identity</div>
-          <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: invMuted, border: `1px solid ${invRule}`, padding: '10px 20px' }}>2025</div>
+        <div className="flex justify-between items-start" style={{ paddingTop: 100, position: 'relative', zIndex: 2 }}>
+          <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: accent, border: `1px solid rgba(255,107,53,.3)`, padding: '8px 14px' }}>◎ &nbsp;Brand Identity</div>
+          <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: invMuted, border: `1px solid ${invRule}`, padding: '8px 14px' }}>2025</div>
         </div>
-        <div style={{ position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'end', gap: 64 }}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-end gap-8 md:gap-16" style={{ position: 'relative', zIndex: 2 }}>
           <div>
-            <p className="flex items-center gap-4" style={{ fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: invMuted, marginBottom: 20 }}>
+            <p className="flex items-center gap-4" style={{ fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: invMuted, marginBottom: 16 }}>
               <span style={{ width: 32, height: 1, background: accent, flexShrink: 0 }} />Case Study — 01
             </p>
-            <h1 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(48px,7vw,96px)', fontWeight: 800, letterSpacing: -3, lineHeight: .93, color: '#F5F0E8', marginBottom: 32 }}>
+            <h1 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(40px,7vw,96px)', fontWeight: 800, letterSpacing: -3, lineHeight: .93, color: '#F5F0E8', marginBottom: 24 }}>
               Aurore<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>Beauty</em><br />Rebrand
             </h1>
-            <p style={{ fontSize: 15, lineHeight: 1.8, color: invMuted, maxWidth: 460 }}>A complete brand identity overhaul for a premium West African beauty house — logo system, visual language, naming architecture, and a 48-page brand guidelines document.</p>
+            <p style={{ fontSize: 14, lineHeight: 1.8, color: invMuted, maxWidth: 460 }}>A complete brand identity overhaul for a premium West African beauty house — logo system, visual language, naming architecture, and a 48-page brand guidelines document.</p>
           </div>
           <HeroMeta accent={accent} bg="rgba(17,16,16,.72)" mutedColor={invMuted} textColor="#F5F0E8"
             items={[{ k: 'Client', v: 'Aurore Beauty' }, { k: 'Scope', v: 'Brand Identity · Naming' }, { k: 'Year', v: '2025' }, { k: 'Duration', v: '8 Weeks' }]} />
@@ -50,8 +50,8 @@ export default function BrandIdentity() {
         items={[{ val: '3', label: 'Logo Variants' }, { val: '48pg', label: 'Brand Guidelines' }, { val: '↑72%', label: 'Brand Recall' }, { val: '12+', label: 'Markets Launched' }]} />
 
       {/* BRIEF */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: bg }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 80, alignItems: 'start' }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: bg }}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-10 md:gap-20 items-start">
           <div className="reveal">
             <SLabel text="01 · The Brief" accent={accent} ruleColor={rule} />
             <SH accent={accent} textColor={deep}>A name that<br />commands a <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>room.</em></SH>
@@ -65,11 +65,11 @@ export default function BrandIdentity() {
       <FullImg bg="linear-gradient(135deg,#1e0c04,#5c2810,#1e0c04)" gridColor="rgba(255,107,53,.04)" label="Brand hero visual — replace with final artwork" />
 
       {/* LOGO SYSTEM */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: mid }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: mid }}>
         <SLabel text="02 · Logo System" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 560 }}>A mark built to<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>last.</em></SH>
-        <p className="reveal" style={{ fontSize: 14, lineHeight: 1.9, color: muted, maxWidth: 560, marginBottom: 48 }}>The primary mark is a geometric abstraction of the aurore (dawn) — a rising arc that reads as both a sun and an open eye. Three variants cover every application from embossed packaging to digital favicon.</p>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 3 }}>
+        <p className="reveal" style={{ fontSize: 14, lineHeight: 1.9, color: muted, maxWidth: 560, marginBottom: 36 }}>The primary mark is a geometric abstraction of the aurore (dawn) — a rising arc that reads as both a sun and an open eye. Three variants cover every application from embossed packaging to digital favicon.</p>
+        <div className="reveal grid grid-cols-1 sm:grid-cols-3 gap-[3px]">
           {[['Primary Mark','Full lockup — horizontal','linear-gradient(135deg,#111010,#1e1c18)'],['Stacked Variant','Vertical lockup — packaging','linear-gradient(135deg,#1e1c18,#2a2820)'],['Icon Mark','Favicon · emboss · stamp','linear-gradient(135deg,#2a2820,#111010)']].map(([title, sub, bg2]) => (
             <div key={title} style={{ background: bg2, aspectRatio: '4/3', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
               <div style={{ width: 48, height: 48, border: `1px solid rgba(255,107,53,.4)`, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -83,11 +83,11 @@ export default function BrandIdentity() {
       </section>
 
       {/* COLOUR & TYPE */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: bg }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: bg }}>
         <SLabel text="03 · Visual Language" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 560 }}>Colour that<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>whispers luxury.</em></SH>
-        <p className="reveal" style={{ fontSize: 14, lineHeight: 1.9, color: muted, maxWidth: 560, marginBottom: 48 }}>The palette draws from West African dawn light — warm terracottas, deep obsidian, and the soft gold of harmattan haze. Nothing borrowed from European luxury conventions.</p>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)', gap: 3 }}>
+        <p className="reveal" style={{ fontSize: 14, lineHeight: 1.9, color: muted, maxWidth: 560, marginBottom: 36 }}>The palette draws from West African dawn light — warm terracottas, deep obsidian, and the soft gold of harmattan haze. Nothing borrowed from European luxury conventions.</p>
+        <div className="reveal grid grid-cols-3 md:grid-cols-6 gap-[3px]">
           {[['#1A1410','Obsidian','#e8d8b8'],['#8B4A1C','Terracotta','#f5e8d8'],['#C47A3C','Harmattan','#3d2008'],['#E8D4B0','Parchment','#3d2008'],['#D4A574','Warm Sand','#3d2008'],['#F5F0E8','Ivory','#3d2008']].map(([bg2, name, tc]) => (
             <div key={name} className="pal-chip" style={{ background: bg2 }}>
               <span style={{ fontFamily: 'Syne, sans-serif', fontSize: 11, fontWeight: 700, marginBottom: 3, color: tc }}>{name}</span>
@@ -98,11 +98,11 @@ export default function BrandIdentity() {
       </section>
 
       {/* TYPOGRAPHY */}
-      <section style={{ padding: 0, borderBottom: `1px solid ${rule}`, background: invBg }}>
+      <section style={{ borderBottom: `1px solid ${rule}`, background: invBg }}>
         <div style={{ position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle,rgba(255,107,53,.06) 1.5px,transparent 1.5px)', backgroundSize: '28px 28px' }} />
           <div style={{ position: 'absolute', top: 20, left: 40, fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(80px,14vw,160px)', letterSpacing: -6, lineHeight: .85, color: 'rgba(245,240,232,.07)', pointerEvents: 'none' }}>Aa</div>
-          <div style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', padding: '64px 56px' }}>
+          <div className="relative z-[1] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center px-6 py-12 md:px-14 md:py-16">
             <div>
               <div style={{ fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', color: accent, marginBottom: 16, fontFamily: 'Syne, sans-serif', fontWeight: 700 }}>Typography System</div>
               <div style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(32px,4vw,56px)', letterSpacing: -2, lineHeight: .95, color: '#F5F0E8', marginBottom: 20 }}>
@@ -123,22 +123,22 @@ export default function BrandIdentity() {
       </section>
 
       {/* IMAGE GRID */}
-      <section style={{ padding: '3px 0 0', borderBottom: `1px solid ${rule}` }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 3, marginBottom: 3 }}>
+      <section style={{ paddingTop: 3, borderBottom: `1px solid ${rule}` }}>
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-[3px] mb-[3px]">
           <VBox bg="linear-gradient(135deg,#1a0800,#3d1500)" label="Brand Identity — Hero Application" style={{ aspectRatio: '16/10' }} />
-          <div style={{ display: 'grid', gap: 3 }}>
-            <VBox bg="linear-gradient(135deg,#c8b89a,#e8d8b8)" label="Stationery Suite" style={{ flex: 1, minHeight: 200 }} />
-            <VBox bg="linear-gradient(135deg,#1e1c18,#2a2820)" label="Logo on Dark" style={{ flex: 1, minHeight: 200 }} />
+          <div className="grid gap-[3px]">
+            <VBox bg="linear-gradient(135deg,#c8b89a,#e8d8b8)" label="Stationery Suite" style={{ minHeight: 200 }} />
+            <VBox bg="linear-gradient(135deg,#1e1c18,#2a2820)" label="Logo on Dark" style={{ minHeight: 200 }} />
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[3px]">
           <VBox bg="linear-gradient(135deg,#0a0804,#1e160a)" label="Brand Guidelines — Spread" style={{ aspectRatio: '4/3' }} />
           <VBox bg="linear-gradient(135deg,#c8b89a,#e8d8b8)" label="Brand in Context" style={{ aspectRatio: '4/3' }} />
         </div>
       </section>
 
       {/* PROCESS */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: bg }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: bg }}>
         <SLabel text="04 · Process" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 540 }}>From discovery to<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>guidelines.</em></SH>
         <ProcessGrid accent={accent} bg={bg} textColor={deep} mutedColor={muted} ruleBg={rule}
@@ -153,7 +153,7 @@ export default function BrandIdentity() {
       <PullQuote accent={accent} text={`"For the first time, our brand looks as good as our product feels. friflow didn't just design a logo — they gave us a language to grow into."`} author="Nadia Koné — Founder, Aurore Beauty" />
 
       {/* DELIVERABLES */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: mid }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: mid }}>
         <SLabel text="05 · Deliverables" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 480 }}>Everything we <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>created.</em></SH>
         <DelGrid accent={accent} bg={card} hoverBg={accent} textColor={deep} mutedColor={muted}
@@ -168,7 +168,7 @@ export default function BrandIdentity() {
       </section>
 
       {/* RESULTS */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: bg }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: bg }}>
         <SLabel text="06 · Results" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 500 }}>A brand that <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>performs.</em></SH>
         <ResGrid accent={accent} bg={mid} numColor={deep} mutedColor={muted} ruleBg={rule}

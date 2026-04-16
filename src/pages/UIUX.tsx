@@ -186,7 +186,7 @@ export default function UIUX() {
           ]} />
       </section>
 
-      <NextProject title="Volta *Motion* Rebrand" cat="Motion Graphics · Brand Film" accent={accent} bg={mid} hoverBg={card} textColor={white} mutedColor={muted} href="/case-studies/motion-graphics" />
+      <NextProject title="EazyTaxes *Brand* Evolution" cat="Brand Identity · Strategy" accent={accent} bg={mid} hoverBg={card} textColor={white} mutedColor={muted} href="/case-studies/eazytaxes-brand" />
       <CsFooter accentColor={accent} bgColor={bg} ruleColor={rule} textColor={white} mutedColor={muted} copyOpacity="rgba(238,242,255,.15)" />
     </div>
   )

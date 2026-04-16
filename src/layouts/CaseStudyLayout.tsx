@@ -35,14 +35,14 @@ export function Strip({ items, bg, numColor, labelColor, ruleBg, accent }: { ite
     <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px]" style={{ background: ruleBg }}>
       {items.map((item, i) => (
         <div key={i} className={`strip-item reveal rd${i}`}
-          style={{ background: bg, padding: '28px 24px', transition: 'background .3s', cursor: 'none' }}
+          style={{ background: bg, padding: '32px 28px', transition: 'background .3s', cursor: 'none' }}
           onMouseEnter={e => (e.currentTarget.style.background = hoverBg)}
           onMouseLeave={e => (e.currentTarget.style.background = bg)}
         >
-          <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(28px,4vw,44px)', fontWeight: 800, letterSpacing: -1.5, lineHeight: 1, marginBottom: 8, color: numColor }}>
+          <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(24px, 4.5vw, 48px)', fontWeight: 800, letterSpacing: -1.5, lineHeight: 1.1, marginBottom: 10, color: numColor }}>
             <StripNum val={item.val} accent={accent} />
           </div>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: labelColor }}>{item.label}</div>
+          <div style={{ fontSize: 9, letterSpacing: 2.5, textTransform: 'uppercase', color: labelColor }}>{item.label}</div>
         </div>
       ))}
     </div>
@@ -53,7 +53,7 @@ export function Strip({ items, bg, numColor, labelColor, ruleBg, accent }: { ite
 interface SLabelProps { text: string; accent: string; ruleColor: string }
 export function SLabel({ text, accent, ruleColor }: SLabelProps) {
   return (
-    <div className="flex items-center gap-3.5" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 32 }}>
+    <div className="flex items-center gap-4" style={{ fontFamily: 'Syne, sans-serif', fontSize: 10, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', color: accent, marginBottom: 24 }}>
       {text}
       <span style={{ flex: 1, height: 1, background: ruleColor }} />
     </div>
@@ -62,9 +62,10 @@ export function SLabel({ text, accent, ruleColor }: SLabelProps) {
 
 /* ── SH ── */
 interface SHProps { children: React.ReactNode; accent: string; textColor: string; style?: React.CSSProperties }
-export function SH({ children, textColor, style }: SHProps) {
+export function SH({ children, textColor, accent, style }: SHProps) {
+  void accent
   return (
-    <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(26px,3.5vw,48px)', letterSpacing: -1.5, lineHeight: 1, marginBottom: 24, color: textColor, ...style }}>
+    <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(32px, 5vw, 64px)', letterSpacing: -1.5, lineHeight: 1.05, marginBottom: 32, color: textColor, ...style }}>
       {children}
     </h2>
   )
@@ -129,12 +130,12 @@ export function ResGrid({ items, bg, numColor, mutedColor, accent, ruleBg }: { i
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-[3px] mt-10 md:mt-12">
       {items.map((r, i) => (
-        <div key={i} className={`rc reveal rd${i + 1}`} style={{ background: bg, padding: '32px 24px', borderTop: `2px solid ${accent}` }}>
-          <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(36px,5vw,52px)', fontWeight: 800, letterSpacing: -2, color: numColor, lineHeight: 1, marginBottom: 8 }}>
+        <div key={i} className={`rc reveal rd${i + 1}`} style={{ background: bg, padding: '40px 32px', borderTop: `2px solid ${accent}`, display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(32px, 6vw, 64px)', fontWeight: 800, letterSpacing: -2, color: numColor, lineHeight: 1 }}>
             <StripNum val={r.num} accent={accent} />
           </div>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: mutedColor, marginBottom: 10 }}>{r.label}</div>
-          <p style={{ fontSize: 12, lineHeight: 1.75, color: mutedColor }}>{r.desc}</p>
+          <div style={{ fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', color: mutedColor, marginBottom: 4 }}>{r.label}</div>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: mutedColor }}>{r.desc}</p>
         </div>
       ))}
     </div>
@@ -178,12 +179,13 @@ export function VBox({ bg, label, subLabel, style, className, children }: { bg: 
 }
 
 /* ── FullImg ── */
-export function FullImg({ bg, gridColor, label }: { bg: string; gridColor: string; label: string }) {
+export function FullImg({ bg, gridColor, label, children, style }: { bg: string; gridColor: string; label?: string; children?: React.ReactNode; style?: React.CSSProperties }) {
   return (
-    <div className="reveal" style={{ width: '100%', aspectRatio: '16/9', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div className="reveal" style={{ width: '100%', aspectRatio: '16/9', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', ...style }}>
       <div style={{ position: 'absolute', inset: 0, background: bg }} />
       <div style={{ position: 'absolute', inset: 0, backgroundImage: `linear-gradient(${gridColor} 1px,transparent 1px),linear-gradient(90deg,${gridColor} 1px,transparent 1px)`, backgroundSize: '64px 64px' }} />
-      <span style={{ position: 'relative', zIndex: 1, fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: 'rgba(245,240,232,.18)', fontFamily: 'DM Sans, sans-serif', textAlign: 'center', padding: '0 16px' }}>{label}</span>
+      {label && <span style={{ position: 'absolute', zIndex: 1, fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: 'rgba(245,240,232,.18)', fontFamily: 'DM Sans, sans-serif', textAlign: 'center', padding: '0 16px' }}>{label}</span>}
+      {children && <div style={{ position: 'relative', zIndex: 2, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{children}</div>}
     </div>
   )
 }

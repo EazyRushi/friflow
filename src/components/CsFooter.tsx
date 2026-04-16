@@ -36,13 +36,15 @@ export default function CsFooter({
   ]
 
   return (
-    <footer style={{ background: bgColor, padding: '56px 56px 40px', borderTop: `1px solid ${ruleColor}` }}>
-      <div className="flex items-center justify-between" style={{ paddingBottom: 40, marginBottom: 32, borderBottom: `1px solid ${ruleColor}` }}>
+    <footer className="px-6 pt-12 pb-8 md:px-14 md:pt-14 md:pb-10" style={{ background: bgColor, borderTop: `1px solid ${ruleColor}` }}>
+      {/* Top row — stacks on mobile */}
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between pb-8 md:pb-10 mb-6 md:mb-8" style={{ borderBottom: `1px solid ${ruleColor}` }}>
         <a href="/" onClick={e => { e.preventDefault(); navigate('/') }} className="flex items-center gap-3 no-underline cursor-none">
           <FriflowLogo color={accentColor} width={32} height={26} />
           <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: 300, fontSize: 22, letterSpacing: 1, color: textColor }}>friflow</span>
         </a>
-        <div className="flex gap-8">
+        {/* Nav links — wrap on small screens */}
+        <div className="flex flex-wrap gap-x-6 gap-y-3">
           {navLinks.map(([hash, label]) => (
             <a key={label} href={`/${hash}`} onClick={goHome(hash)} className="cursor-none no-underline transition-colors duration-200"
               style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: mutedColor }}
@@ -52,7 +54,9 @@ export default function CsFooter({
           ))}
         </div>
       </div>
-      <div className="flex justify-between">
+
+      {/* Bottom row — stacks on mobile */}
+      <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
         <p style={{ fontSize: 11, color: copyOpacity, letterSpacing: 1 }}>© 2025 friflow design studio.</p>
         <a href="mailto:hello@friflow.studio" className="no-underline cursor-none" style={{ fontSize: 11, color: copyOpacity, letterSpacing: 1 }}
           onMouseEnter={e => (e.currentTarget.style.color = accentColor)}

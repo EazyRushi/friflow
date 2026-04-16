@@ -146,6 +146,7 @@ body::before {
 /* Work item hover */
 .work-thumb-inner { transition: transform .7s cubic-bezier(.25,.46,.45,.94); }
 .work-item:hover .work-thumb-inner { transform: scale(1.05); }
+.work-item:hover .work-img { transform: scale(1.1); }
 .work-item:hover .work-overlay { opacity: 1; }
 .work-item:hover .work-info { opacity: 1; transform: translateY(0); }
 

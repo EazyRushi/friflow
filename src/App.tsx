@@ -7,6 +7,7 @@ import GraphicDesign from './pages/GraphicDesign'
 import MotionGraphics from './pages/MotionGraphics'
 import ProductDesign from './pages/ProductDesign'
 import UIUX from './pages/UIUX'
+import EazyTaxesBrand from './pages/EazyTaxesBrand'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/case-studies/motion-graphics" element={<MotionGraphics />} />
         <Route path="/case-studies/product-design" element={<ProductDesign />} />
         <Route path="/case-studies/ui-ux" element={<UIUX />} />
+        <Route path="/case-studies/eazytaxes-brand" element={<EazyTaxesBrand />} />
       </Routes>
     </BrowserRouter>
   )

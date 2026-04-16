@@ -23,23 +23,23 @@ export default function GraphicDesign() {
       <CsNavbar accentColor={accent} bgScrolled="rgba(17,16,16,.94)" textColor="#F5F0E8" mutedColor={invMuted} ctaTextColor="#fff" />
 
       {/* HERO */}
-      <section style={{ minHeight: '100vh', display: 'grid', gridTemplateRows: '1fr auto', padding: '0 56px 72px', position: 'relative', overflow: 'hidden', background: invBg }}>
+      <section className="cs-hero px-6 pb-12 md:px-14 md:pb-16" style={{ minHeight: '100vh', display: 'grid', gridTemplateRows: '1fr auto', position: 'relative', overflow: 'hidden', background: invBg }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(150deg,#0a0804,#1e160a,#2a1e0c,#0a0804)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom,rgba(17,16,16,.2) 0%,transparent 35%,transparent 55%,rgba(17,16,16,.95) 100%)' }} />
         <div className="hero-halftone" style={{ position: 'absolute', inset: 0, opacity: .6 }} />
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: 140, position: 'relative', zIndex: 2 }}>
-          <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: accent, border: `1px solid rgba(255,107,53,.3)`, padding: '10px 20px' }}>◎ &nbsp;Graphic Design</div>
-          <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: invMuted, border: `1px solid ${invRule}`, padding: '10px 20px' }}>2025</div>
+        <div className="flex justify-between items-start" style={{ paddingTop: 100, position: 'relative', zIndex: 2 }}>
+          <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: accent, border: `1px solid rgba(255,107,53,.3)`, padding: '8px 14px' }}>◎ &nbsp;Graphic Design</div>
+          <div style={{ fontSize: 10, letterSpacing: 4, textTransform: 'uppercase', color: invMuted, border: `1px solid ${invRule}`, padding: '8px 14px' }}>2025</div>
         </div>
-        <div style={{ position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'end', gap: 64 }}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-end gap-8 md:gap-16" style={{ position: 'relative', zIndex: 2 }}>
           <div>
-            <p className="flex items-center gap-4" style={{ fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: invMuted, marginBottom: 20 }}>
+            <p className="flex items-center gap-4" style={{ fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: invMuted, marginBottom: 16 }}>
               <span style={{ width: 32, height: 1, background: accent, flexShrink: 0 }} />Case Study — 03
             </p>
-            <h1 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(48px,7vw,96px)', fontWeight: 800, letterSpacing: -3, lineHeight: .93, color: '#F5F0E8', marginBottom: 32 }}>
+            <h1 style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(40px,7vw,96px)', fontWeight: 800, letterSpacing: -3, lineHeight: .93, color: '#F5F0E8', marginBottom: 24 }}>
               Roots &amp;<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>Ritual</em><br />Identity
             </h1>
-            <p style={{ fontSize: 15, lineHeight: 1.8, color: invMuted, maxWidth: 460 }}>A full brand identity and print system for an organic tea brand rooted in West African botanicals — balancing heritage with contemporary shelf appeal.</p>
+            <p style={{ fontSize: 14, lineHeight: 1.8, color: invMuted, maxWidth: 460 }}>A full brand identity and print system for an organic tea brand rooted in West African botanicals — balancing heritage with contemporary shelf appeal.</p>
           </div>
           <HeroMeta accent={accent} bg="rgba(17,16,16,.72)" mutedColor={invMuted} textColor="#F5F0E8"
             items={[{ k: 'Client', v: 'Roots & Ritual Co.' }, { k: 'Scope', v: 'Brand Identity · Print' }, { k: 'Year', v: '2025' }, { k: 'Duration', v: '6 Weeks' }]} />
@@ -51,8 +51,8 @@ export default function GraphicDesign() {
         items={[{ val: '6', label: 'SKU Designs' }, { val: '2×', label: 'Reorder Rate' }, { val: '18k', label: 'Print Run — Launch' }, { val: '↑55%', label: 'Retailer Pick-up' }]} />
 
       {/* BRIEF */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: bg }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 80, alignItems: 'start' }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: bg }}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-10 md:gap-20 items-start">
           <div className="reveal">
             <SLabel text="01 · The Brief" accent={accent} ruleColor={rule} />
             <SH accent={accent} textColor={deep}>Roots that ground.<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>Ritual that sells.</em></SH>
@@ -66,11 +66,11 @@ export default function GraphicDesign() {
       <FullImg bg="linear-gradient(135deg,#1e0c04,#5c2810,#1e0c04)" gridColor="rgba(255,107,53,.04)" label="Campaign hero visual — replace with final artwork" />
 
       {/* COLOUR */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: mid }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: mid }}>
         <SLabel text="02 · Visual Language" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 560 }}>Every colour tells<br />a <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>story.</em></SH>
         <p className="reveal" style={{ fontSize: 14, lineHeight: 1.9, color: muted, maxWidth: 560, marginBottom: 0 }}>The palette was drawn directly from the botanicals — earthy ochres, deep forest greens, and the warm blush of hibiscus.</p>
-        <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)', gap: 3, marginTop: 48 }}>
+        <div className="reveal grid grid-cols-3 md:grid-cols-6 gap-[3px] mt-10">
           {[['#3D2008','Deep Earth','#e8d8b8'],['#8B4A1C','Bark Brown','#f5e8d8'],['#C47A3C','Warm Ochre','#3d2008'],['#1C3A20','Forest','#c8dcc8'],['#C45A5A','Hibiscus','#fff'],['#EDE0C8','Parchment','#3d2008']].map(([bg2, name, tc]) => (
             <div key={name} className="pal-chip" style={{ background: bg2 }}>
               <span style={{ fontFamily: 'Syne, sans-serif', fontSize: 11, fontWeight: 700, marginBottom: 3, color: tc }}>{name}</span>
@@ -81,11 +81,11 @@ export default function GraphicDesign() {
       </section>
 
       {/* TYPOGRAPHY */}
-      <section style={{ padding: 0, borderBottom: `1px solid ${rule}`, background: invBg }}>
+      <section style={{ borderBottom: `1px solid ${rule}`, background: invBg }}>
         <div style={{ position: 'relative', overflow: 'hidden', background: invBg, margin: 0 }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle,rgba(255,107,53,.06) 1.5px,transparent 1.5px)', backgroundSize: '28px 28px' }} />
           <div style={{ position: 'absolute', top: 20, left: 40, fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(80px,14vw,160px)', letterSpacing: -6, lineHeight: .85, color: 'rgba(245,240,232,.07)', pointerEvents: 'none' }}>Aa</div>
-          <div style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', padding: '64px 56px' }}>
+          <div className="relative z-[1] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center px-6 py-12 md:px-14 md:py-16">
             <div>
               <div style={{ fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', color: accent, marginBottom: 16, fontFamily: 'Syne, sans-serif', fontWeight: 700 }}>Typography System</div>
               <div style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(32px,4vw,56px)', letterSpacing: -2, lineHeight: .95, color: '#F5F0E8', marginBottom: 20 }}>
@@ -106,22 +106,22 @@ export default function GraphicDesign() {
       </section>
 
       {/* IMAGE GRID */}
-      <section style={{ padding: '3px 0 0', borderBottom: `1px solid ${rule}` }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 3, marginBottom: 3 }}>
+      <section style={{ paddingTop: 3, borderBottom: `1px solid ${rule}` }}>
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-[3px] mb-[3px]">
           <VBox bg="linear-gradient(135deg,#3d1500,#8c3010)" label="Package Design — Hibiscus" style={{ aspectRatio: '16/10' }} />
-          <div style={{ display: 'grid', gap: 3 }}>
-            <VBox bg="linear-gradient(135deg,#d0c8b8,#b8b0a0)" label="Label Detail" style={{ flex: 1, minHeight: 200 }} />
-            <VBox bg="linear-gradient(135deg,#c8b89a,#e8d8b8)" label="Illustration Fragment" style={{ flex: 1, minHeight: 200 }} />
+          <div className="grid gap-[3px]">
+            <VBox bg="linear-gradient(135deg,#d0c8b8,#b8b0a0)" label="Label Detail" style={{ minHeight: 200 }} />
+            <VBox bg="linear-gradient(135deg,#c8b89a,#e8d8b8)" label="Illustration Fragment" style={{ minHeight: 200 }} />
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[3px]">
           <VBox bg="linear-gradient(135deg,#0a0804,#1e160a)" label="Full Range — Dark" style={{ aspectRatio: '4/3' }} />
           <VBox bg="linear-gradient(135deg,#c8b89a,#e8d8b8)" label="Editorial Flat Lay" style={{ aspectRatio: '4/3' }} />
         </div>
       </section>
 
       {/* PROCESS */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: bg }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: bg }}>
         <SLabel text="03 · Process" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 540 }}>From sketch to <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>shelf.</em></SH>
         <ProcessGrid accent={accent} bg={bg} textColor={deep} mutedColor={muted} ruleBg={rule}
@@ -136,7 +136,7 @@ export default function GraphicDesign() {
       <PullQuote accent={accent} text={`"We finally have a brand that feels as intentional as our ingredients. Every time someone picks up a pack and pauses — that's friflow's work."`} author="Ama Owusu — Founder, Roots & Ritual Co." />
 
       {/* DELIVERABLES */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: mid }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: mid }}>
         <SLabel text="04 · Deliverables" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 480 }}>Everything we <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>created.</em></SH>
         <DelGrid accent={accent} bg={card} hoverBg={accent} textColor={deep} mutedColor={muted}
@@ -151,7 +151,7 @@ export default function GraphicDesign() {
       </section>
 
       {/* RESULTS */}
-      <section style={{ padding: '96px 56px', borderBottom: `1px solid ${rule}`, background: bg }}>
+      <section className="px-6 py-14 md:px-14 md:py-24" style={{ borderBottom: `1px solid ${rule}`, background: bg }}>
         <SLabel text="05 · Results" accent={accent} ruleColor={rule} />
         <SH accent={accent} textColor={deep} style={{ maxWidth: 500 }}>Design that <em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>performed.</em></SH>
         <ResGrid accent={accent} bg={mid} numColor={deep} mutedColor={muted} ruleBg={rule}

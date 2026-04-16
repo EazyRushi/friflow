@@ -45,14 +45,16 @@ export default function Footer() {
   ]
 
   return (
-    <footer style={{ background: '#080808', padding: '80px 56px 48px', borderTop: `1px solid ${rule}` }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', gap: 64, marginBottom: 64, paddingBottom: 64, borderBottom: `1px solid ${rule}` }}>
-        <div>
+    <footer className="px-6 pt-14 pb-10 md:px-14 md:pt-20 md:pb-12" style={{ background: '#080808', borderTop: `1px solid ${rule}` }}>
+      {/* Main grid: 1 col → 2 col → 4 col */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-16 pb-12 md:pb-16 mb-10 md:mb-12" style={{ borderBottom: `1px solid ${rule}` }}>
+        {/* Brand col */}
+        <div className="sm:col-span-2 lg:col-span-1">
           <a href="/" onClick={e => { e.preventDefault(); navigate('/') }} className="flex items-center gap-3 mb-5 no-underline cursor-none">
             <FriflowLogo />
             <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: 300, fontSize: 22, letterSpacing: 1, color: '#F5F0E8' }}>friflow</span>
           </a>
-          <p style={{ fontSize: 13, lineHeight: 1.8, color: muted, marginBottom: 28, maxWidth: 280 }}>
+          <p style={{ fontSize: 13, lineHeight: 1.8, color: muted, marginBottom: 24, maxWidth: 300 }}>
             A full-spectrum design studio building brands, interfaces, and visual systems that move people — and business forward.
           </p>
           <div className="flex gap-3">
@@ -70,10 +72,12 @@ export default function Footer() {
             ))}
           </div>
         </div>
+
+        {/* Link cols */}
         {cols.map(col => (
           <div key={col.title}>
-            <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', color: '#F5F0E8', marginBottom: 28 }}>{col.title}</div>
-            <div className="flex flex-col gap-3.5">
+            <div style={{ fontFamily: 'Syne, sans-serif', fontSize: 11, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', color: '#F5F0E8', marginBottom: 24 }}>{col.title}</div>
+            <div className="flex flex-col gap-3">
               {col.links.map(([href, label]) => {
                 const isMail = href.startsWith('mailto:')
                 return (
@@ -90,7 +94,9 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <div className="flex justify-between items-center">
+
+      {/* Bottom bar — stacks on mobile */}
+      <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center">
         <p style={{ fontSize: 11, color: 'rgba(245,240,232,.2)', letterSpacing: 1 }}>© 2025 friflow design studio. All rights reserved.</p>
         <p style={{ fontSize: 11, color: 'rgba(245,240,232,.2)', letterSpacing: 1 }}>Made with obsession by <a href="/" onClick={e => { e.preventDefault(); navigate('/') }} style={{ color: '#FF6B35', textDecoration: 'none' }}>friflow</a></p>
       </div>
