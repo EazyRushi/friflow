@@ -1,7 +1,7 @@
 import CustomCursor from '../components/CustomCursor'
 import CsNavbar from '../components/CsNavbar'
 import CsFooter from '../components/CsFooter'
-import { useCsReveal, Strip, SLabel, SH, PullQuote, ProcessGrid, DelGrid, ResGrid, NextProject, VBox, FullImg, HeroMeta } from '../layouts/CaseStudyLayout'
+import { useCsReveal, Strip, SLabel, SH, PullQuote, ProcessGrid, DelGrid, ResGrid, NextProject, FullImg } from '../layouts/CaseStudyLayout'
 
 const accent = '#008080' // Teal for EazyTaxes
 const bg = '#F5F5F5' // Light grey/white
