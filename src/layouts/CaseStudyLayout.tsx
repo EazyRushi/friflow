@@ -14,6 +14,14 @@ export function useCsReveal() {
   }, [])
 }
 
+export function BrandLogo({ style }: { style?: React.CSSProperties }) {
+  return (
+    <div style={{ fontFamily: 'var(--font-aileron)', fontSize: 24, fontWeight: 700, letterSpacing: -1, ...style }}>
+      <span style={{ color: 'var(--color-ink)' }}>eazy</span><span style={{ color: 'var(--color-teal)' }}>taxes</span>
+    </div>
+  )
+}
+
 const SPECIAL = ['+','%','×','k','M','s','w','★','↑','↓','−','*']
 function StripNum({ val, accent }: { val: string; accent: string }) {
   return (
@@ -187,6 +195,19 @@ export function FullImg({ bg, gridColor, label, children, style }: { bg: string;
       {label && <span style={{ position: 'absolute', zIndex: 1, fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: 'rgba(245,240,232,.18)', fontFamily: 'DM Sans, sans-serif', textAlign: 'center', padding: '0 16px' }}>{label}</span>}
       {children && <div style={{ position: 'relative', zIndex: 2, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{children}</div>}
     </div>
+  )
+}
+
+/* ── BookletBand ── */
+export function BookletBand({ bg, img, children }: { bg?: string; img: string; children: React.ReactNode }) {
+  return (
+    <section className="reveal" style={{ position: 'relative', width: '100%', minHeight: '80vh', display: 'flex', alignItems: 'center', background: bg || '#003D3D', overflow: 'hidden' }}>
+      <img src={img} alt="Background" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.45))', zIndex: 1 }} />
+      <div className="relative z-10 px-6 md:px-14 w-full">
+        {children}
+      </div>
+    </section>
   )
 }
 
