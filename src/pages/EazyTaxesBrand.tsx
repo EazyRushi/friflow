@@ -1,7 +1,7 @@
 import CustomCursor from '../components/CustomCursor'
 import CsNavbar from '../components/CsNavbar'
 import CsFooter from '../components/CsFooter'
-import { useCsReveal, NextProject } from '../layouts/CaseStudyLayout'
+import { useCsReveal } from '../layouts/CaseStudyLayout'
 import { useNavigate } from 'react-router-dom'
 
 /* ─── Brand tokens (match HTML :root vars) ─── */
