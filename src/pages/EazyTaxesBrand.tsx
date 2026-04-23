@@ -139,7 +139,7 @@ export default function EazyTaxesBrand() {
 
         {/* Hero right */}
         <div style={{ position: 'relative', zIndex: 2, height: '100%', minHeight: 600, overflow: 'hidden' }}>
-          <img src="/work/work1.jpeg" alt="EazyTaxes Brand" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+          <img src="/eazytaxes-work/work1.jpeg" alt="EazyTaxes Brand" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(240,248,250,.4) 0%, transparent 40%)' }} />
           {/* Floating card */}
           <div className="reveal" style={{ position: 'absolute', bottom: 40, left: 32, background: WHITE, padding: '20px 24px', boxShadow: '0 16px 60px rgba(0,0,0,.12)', display: 'flex', alignItems: 'center', gap: 16, minWidth: 220 }}>
@@ -205,7 +205,7 @@ export default function EazyTaxesBrand() {
 
       {/* ════ 02 · BOOKLET BAND (full-bleed image, text at bottom) ════ */}
       <section className="reveal" style={{ position: 'relative', overflow: 'hidden', height: 'clamp(380px, 50vw, 680px)' }}>
-        <img src="/work/work2.jpeg" alt="Brand booklet" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', transition: `transform 8s ease` }}
+        <img src="/eazytaxes-work/work2.jpeg" alt="Brand booklet" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', transition: `transform 8s ease` }}
           onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.03)')}
           onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(120deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.4) 60%, transparent 100%)', display: 'flex', alignItems: 'flex-end', padding: 'clamp(32px, 5vw, 64px)' }}>
@@ -229,7 +229,7 @@ export default function EazyTaxesBrand() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, minHeight: 560 }}>
           {/* Image */}
           <div className="reveal" style={{ overflow: 'hidden', position: 'relative' }}>
-            <img src="/work/work4.jpeg" alt="EazyTaxes Collateral" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: `transform .8s ${EASE}` }}
+            <img src="/eazytaxes-work/work4.jpeg" alt="EazyTaxes Collateral" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: `transform .8s ${EASE}` }}
               onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.03)')}
               onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
           </div>
@@ -315,7 +315,7 @@ export default function EazyTaxesBrand() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 3 }}>
           {/* Full width */}
           <div className="reveal" style={{ gridColumn: '1/-1', overflow: 'hidden', position: 'relative', minHeight: 360 }}>
-            <img src="/work/work3.jpeg" alt="Brand Guidelines" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: `transform .7s ${EASE}` }}
+            <img src="/eazytaxes-work/work3.jpeg" alt="Brand Guidelines" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: `transform .7s ${EASE}` }}
               onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
               onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(transparent, rgba(1,1,1,.7))', padding: '32px 24px 20px', fontSize: 9, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase', color: 'rgba(255,255,255,.8)', opacity: 0, transition: 'opacity .3s' }}
@@ -324,8 +324,8 @@ export default function EazyTaxesBrand() {
           </div>
           {/* Two columns */}
           {[
-            { src: '/work/work4.jpeg', label: 'BUSINESS CARDS', delay: '.1s' },
-            { src: '/work/work1.jpeg', label: 'STATIONERY',     delay: '.2s' },
+            { src: '/eazytaxes-work/work4.jpeg', label: 'BUSINESS CARDS', delay: '.1s' },
+            { src: '/eazytaxes-work/work1.jpeg', label: 'STATIONERY',     delay: '.2s' },
           ].map((t, i) => (
             <div key={i} className="reveal" style={{ overflow: 'hidden', position: 'relative', minHeight: 300, transitionDelay: t.delay }}>
               <img src={t.src} alt={t.label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: `transform .7s ${EASE}` }}
@@ -466,7 +466,7 @@ export default function EazyTaxesBrand() {
 
       {/* ════ BRAND SPREAD (full-bleed) ════ */}
       <section className="reveal" style={{ position: 'relative', overflow: 'hidden', height: 'clamp(340px, 45vw, 620px)' }}>
-        <img src="/work/work3.jpeg" alt="Brand spread" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', transition: 'transform 8s ease' }}
+        <img src="/eazytaxes-work/work3.jpeg" alt="Brand spread" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', transition: 'transform 8s ease' }}
           onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.03)')}
           onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(1,1,1,.65) 0%, transparent 60%)', display: 'flex', alignItems: 'flex-end', padding: 'clamp(32px, 5vw, 64px)' }}>

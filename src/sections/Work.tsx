@@ -11,7 +11,7 @@ const CS_ROUTES: Record<string, string> = {
 }
 
 const works = [
-  { file: 'eazytaxes-brand', label: 'Brand Identity', cat: 'Brand Identity · Strategy', title: 'EazyTaxes Brand Evolution', year: '2025', bg: 'linear-gradient(135deg,#005050,#003333)', image: '/work/work2.jpeg', span: true },
+  { file: 'eazytaxes-brand', label: 'Brand Identity', cat: 'Brand Identity · Strategy', title: 'EazyTaxes Brand Evolution', year: '2025', bg: 'linear-gradient(135deg,#005050,#003333)', image: '/eazytaxes-work/logo.jpg', span: true },
   { file: 'brand-identity', label: 'Brand Identity', cat: 'Packaging · Brand Identity', title: 'Aurore Beauty Rebrand', year: '2025', bg: 'linear-gradient(135deg,#1a0800,#3d1500,#6b2800)', span: false },
   { file: 'product-design', label: 'Product Design', cat: 'Product Design', title: 'Modu Smart Scale', year: '2025', bg: 'linear-gradient(135deg,#040c00,#0e2200,#1c3d00)', span: false },
   { file: 'graphic-design', label: 'Graphic Design', cat: 'Graphic Design · Print', title: 'Roots & Ritual Identity', year: '2025', bg: 'linear-gradient(135deg,#060410,#0e0a28,#1a1450)', span: false },
