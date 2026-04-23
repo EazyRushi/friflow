@@ -8,15 +8,16 @@ const CS_ROUTES: Record<string, string> = {
   'motion-graphics': '/case-studies/motion-graphics',
   'product-design': '/case-studies/product-design',
   'ui-ux': '/case-studies/ui-ux',
+  'sabhi-chef': '/case-studies/sabhi-chef',
 }
 
 const works = [
   { file: 'eazytaxes-brand', label: 'Brand Identity', cat: 'Brand Identity · Strategy', title: 'EazyTaxes Brand Evolution', year: '2025', bg: 'linear-gradient(135deg,#005050,#003333)', image: '/eazytaxes-work/logo.jpg', span: true },
-  { file: 'brand-identity', label: 'Brand Identity', cat: 'Packaging · Brand Identity', title: 'Aurore Beauty Rebrand', year: '2025', bg: 'linear-gradient(135deg,#1a0800,#3d1500,#6b2800)', span: false },
-  { file: 'product-design', label: 'Product Design', cat: 'Product Design', title: 'Modu Smart Scale', year: '2025', bg: 'linear-gradient(135deg,#040c00,#0e2200,#1c3d00)', span: false },
-  { file: 'graphic-design', label: 'Graphic Design', cat: 'Graphic Design · Print', title: 'Roots & Ritual Identity', year: '2025', bg: 'linear-gradient(135deg,#060410,#0e0a28,#1a1450)', span: false },
-  { file: 'ui-ux', label: 'UI / UX Design', cat: 'UI / UX Design', title: 'Cipher Finance Platform', year: '2025', bg: 'linear-gradient(135deg,#180408,#3d0a18,#6b1430)', span: false },
+  { file: 'sabhi-chef',      label: 'Brand & Product', cat: 'Brand · Website · Packaging', title: 'Sabhi Chef', year: '2025', bg: 'linear-gradient(135deg,#7a3010,#4a1800,#1e0f00)', span: false },
+  { file: 'graphic-design',  label: 'Graphic Design', cat: 'Graphic Design · Print', title: 'Roots & Ritual Identity', year: '2025', bg: 'linear-gradient(135deg,#060410,#0e0a28,#1a1450)', span: false },
+  { file: 'ui-ux',           label: 'UI / UX Design', cat: 'UI / UX Design', title: 'Cipher Finance Platform', year: '2025', bg: 'linear-gradient(135deg,#180408,#3d0a18,#6b1430)', span: false },
   { file: 'motion-graphics', label: 'Motion Graphics', cat: 'Motion Graphics · Film', title: 'Volta Energy Brand Film', year: '2025', bg: 'linear-gradient(135deg,#040c14,#0a1e2e,#143050)', span: false },
+  { file: 'brand-identity',  label: 'Brand Identity', cat: 'Packaging · Brand Identity', title: 'Aurore Beauty Rebrand', year: '2025', bg: 'linear-gradient(135deg,#1a0800,#3d1500,#6b2800)', span: false },
 ]
 
 export default function Work() {

@@ -8,6 +8,7 @@ import MotionGraphics from './pages/MotionGraphics'
 import ProductDesign from './pages/ProductDesign'
 import UIUX from './pages/UIUX'
 import EazyTaxesBrand from './pages/EazyTaxesBrand'
+import SabhiChef from './pages/SabhiChef'
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/case-studies/product-design" element={<ProductDesign />} />
         <Route path="/case-studies/ui-ux" element={<UIUX />} />
         <Route path="/case-studies/eazytaxes-brand" element={<EazyTaxesBrand />} />
+        <Route path="/case-studies/sabhi-chef" element={<SabhiChef />} />
       </Routes>
     </BrowserRouter>
   )
