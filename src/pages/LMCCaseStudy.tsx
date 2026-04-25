@@ -8,14 +8,12 @@ import CsFooter from '../components/CsFooter'
 const RED         = '#c2262e'
 const RED_DARK    = '#9a1b22'
 const YELLOW      = '#fbb03b'
-const YELLOW_PALE = '#fff8ec'
 const INK         = '#0d0d0d'
 const INK_LIGHT   = '#5a5a5a'
 const INK_MUTED   = '#8a8a8a'
 const WHITE       = '#ffffff'
 const OFF_WHITE   = '#fafaf9'
 const PAPER       = '#f5f4f0'
-const EASE        = 'cubic-bezier(0.16,1,0.3,1)'
 
 function useLmcReveal() {
   useEffect(() => {
