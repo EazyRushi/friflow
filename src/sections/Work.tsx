@@ -1,23 +1,21 @@
 import { useNavigate } from 'react-router-dom'
 
 const CS_ROUTES: Record<string, string> = {
-  'brand-identity': '/case-studies/brand-identity',
   'eazytaxes-brand': '/case-studies/eazytaxes-brand',
-  'packaging-design': '/case-studies/packaging-design',
-  'graphic-design': '/case-studies/graphic-design',
-  'motion-graphics': '/case-studies/motion-graphics',
-  'product-design': '/case-studies/product-design',
-  'ui-ux': '/case-studies/ui-ux',
   'sabhi-chef': '/case-studies/sabhi-chef',
+  'lmc': '/case-studies/lmc',
+  'ui-ux': '/case-studies/ui-ux',
+  'motion-graphics': '/case-studies/motion-graphics',
+  'brand-identity': '/case-studies/brand-identity',
 }
 
 const works = [
-  { file: 'eazytaxes-brand', label: 'Brand Identity', cat: 'Brand Identity · Strategy', title: 'EazyTaxes Brand Evolution', year: '2025', bg: 'linear-gradient(135deg,#005050,#003333)', image: '/eazytaxes-work/logo.jpg', span: true },
-  { file: 'sabhi-chef',      label: 'Brand & Product', cat: 'Brand · Website · Packaging', title: 'Sabhi Chef', year: '2025', bg: 'linear-gradient(135deg,#7a3010,#4a1800,#1e0f00)', span: false },
-  { file: 'graphic-design',  label: 'Graphic Design', cat: 'Graphic Design · Print', title: 'Roots & Ritual Identity', year: '2025', bg: 'linear-gradient(135deg,#060410,#0e0a28,#1a1450)', span: false },
-  { file: 'ui-ux',           label: 'UI / UX Design', cat: 'UI / UX Design', title: 'Cipher Finance Platform', year: '2025', bg: 'linear-gradient(135deg,#180408,#3d0a18,#6b1430)', span: false },
-  { file: 'motion-graphics', label: 'Motion Graphics', cat: 'Motion Graphics · Film', title: 'Volta Energy Brand Film', year: '2025', bg: 'linear-gradient(135deg,#040c14,#0a1e2e,#143050)', span: false },
-  { file: 'brand-identity',  label: 'Brand Identity', cat: 'Packaging · Brand Identity', title: 'Aurore Beauty Rebrand', year: '2025', bg: 'linear-gradient(135deg,#1a0800,#3d1500,#6b2800)', span: false },
+  { file: 'eazytaxes-brand', label: 'EazyTaxes', cat: 'Brand Identity · Strategy', title: 'EazyTaxes Brand Evolution', year: '2025', bg: 'linear-gradient(135deg,#fff,#f5f5f5)', image: '/eazytaxes-work/logo.jpg', span: false, containImage: true },
+  { file: 'lmc',             label: 'Los 100 Mejores', cat: 'Identity · Logos', title: 'Los 100 Mejores', year: '2025', bg: 'linear-gradient(135deg,#7a1216,#4a0a0d,#1e0405)', image: '/LMC/Mockups/1.png', span: false },
+  { file: 'sabhi-chef',      label: 'Brand & Product', cat: 'Brand · Website · Packaging', title: 'Sabhi Chef', year: '2025', bg: 'linear-gradient(135deg,#824419,#552A0D,#291405)', image: '/Sabhi Chef/Logo/Asset 6@2x.png', span: false, containImage: true },
+  { file: 'ui-ux',           label: 'UI / UX Design', cat: 'UI / UX Design', title: 'Cipher Finance Platform', year: '2025', bg: 'linear-gradient(135deg,#180408,#3d0a18,#6b1430)', image: undefined, span: false },
+  { file: 'motion-graphics', label: 'Motion Graphics', cat: 'Motion Graphics · Film', title: 'Volta Energy Brand Film', year: '2025', bg: 'linear-gradient(135deg,#040c14,#0a1e2e,#143050)', image: undefined, span: false },
+  { file: 'brand-identity',  label: 'Brand Identity', cat: 'Packaging · Brand Identity', title: 'Aurore Beauty Rebrand', year: '2025', bg: 'linear-gradient(135deg,#1a0800,#3d1500,#6b2800)', image: undefined, span: false },
 ]
 
 export default function Work() {
@@ -55,7 +53,7 @@ export default function Work() {
             <div style={{ width: '100%', overflow: 'hidden' }}>
               <div className="work-thumb-inner" style={{ width: '100%', background: w.bg, aspectRatio: '4/3', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
                 {w.image ? (
-                  <img src={w.image} alt={w.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .8s cubic-bezier(0.2, 0, 0.2, 1)' }} className="work-img" />
+                  <img src={w.image} alt={w.title} style={{ width: '100%', height: '100%', objectFit: w.containImage ? 'contain' : 'cover', padding: w.containImage ? '40px' : '0', transition: 'transform .8s cubic-bezier(0.2, 0, 0.2, 1)' }} className="work-img" />
                 ) : (
                   <span style={{ fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', color: 'rgba(245,240,232,.15)', textAlign: 'center', padding: 20 }}>{w.title}</span>
                 )}
@@ -79,7 +77,7 @@ export default function Work() {
             <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
               <div className="work-thumb-inner" style={{ width: '100%', height: '100%', background: w.bg, aspectRatio: w.span ? '3/4' : '4/3', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
                 {w.image ? (
-                  <img src={w.image} alt={w.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .8s cubic-bezier(0.2, 0, 0.2, 1)' }} className="work-img" />
+                  <img src={w.image} alt={w.title} style={{ width: '100%', height: '100%', objectFit: w.containImage ? 'contain' : 'cover', padding: w.containImage ? '60px' : '0', transition: 'transform .8s cubic-bezier(0.2, 0, 0.2, 1)' }} className="work-img" />
                 ) : (
                   <span style={{ fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', color: 'rgba(245,240,232,.15)', textAlign: 'center', padding: 20 }}>{w.title}</span>
                 )}

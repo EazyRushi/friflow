@@ -81,10 +81,10 @@ const TICKER_ITEMS = [
 
 /* ─── Packaging card ─── */
 function PkCard({
-  topBg, brandLight, category, name, meta, chips, botBg, price, weight, footTitle, footSub, delay,
+  topBg, brandLight, category, name, meta, chips, botBg, price, weight, footTitle, footSub, delay, imgUrl,
 }: {
-  topBg: string; brandLight?: boolean; category: string; name: string; meta: string; chips: string[];
-  botBg: string; price: string; weight: string; footTitle: string; footSub: string; delay?: string
+  topBg?: string; brandLight?: boolean; category?: string; name?: string; meta?: string; chips?: string[];
+  botBg?: string; price?: string; weight?: string; footTitle: string; footSub: string; delay?: string; imgUrl?: string;
 }) {
   return (
     <div className="sc-reveal" style={{
@@ -96,30 +96,35 @@ function PkCard({
       onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-6px)'; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 20px 40px rgba(0,0,0,.3)' }}
       onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = ''; (e.currentTarget as HTMLDivElement).style.boxShadow = '' }}
     >
-      {/* Label face */}
-      <div style={{ display: 'flex', flexDirection: 'column', width: '100%', aspectRatio: '3/4' }}>
-        {/* Top */}
-        <div style={{ padding: '.85rem 1rem .55rem', textAlign: 'center', borderBottom: `2px solid ${INK}`, background: topBg }}>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.9rem', fontWeight: 900, color: brandLight ? 'white' : BR }}>Sabhi Chef</div>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.42rem', fontWeight: 800, letterSpacing: '.1em', textTransform: 'uppercase', color: brandLight ? 'rgba(255,255,255,.75)' : G, marginTop: 2 }}>Homely Food in Minutes</div>
+      {imgUrl ? (
+        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', aspectRatio: '3/4', position: 'relative', overflow: 'hidden' }}>
+          <img src={imgUrl} alt={footTitle} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
-        {/* Mid */}
-        <div style={{ flex: 1, padding: '.75rem 1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', background: '#fffdf7' }}>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 900, letterSpacing: '.12em', textTransform: 'uppercase', color: O, marginBottom: 3 }}>{category}</div>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1rem', fontWeight: 900, color: INK, lineHeight: 1.1, marginBottom: '.3rem' }}>{name}</div>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 700, color: '#7a4a20', marginBottom: '.5rem' }}>{meta}</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 3, justifyContent: 'center' }}>
-            {chips.map((c, i) => (
-              <span key={i} style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.4rem', fontWeight: 900, background: 'rgba(255,255,255,.8)', border: `1.5px solid ${BR}`, borderRadius: 10, padding: '2px 6px', color: BR }}>{c}</span>
-            ))}
+      ) : (
+        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', aspectRatio: '3/4' }}>
+          {/* Top */}
+          <div style={{ padding: '.85rem 1rem .55rem', textAlign: 'center', borderBottom: `2px solid ${INK}`, background: topBg }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.9rem', fontWeight: 900, color: brandLight ? 'white' : BR }}>Sabhi Chef</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.42rem', fontWeight: 800, letterSpacing: '.1em', textTransform: 'uppercase', color: brandLight ? 'rgba(255,255,255,.75)' : G, marginTop: 2 }}>Homely Food in Minutes</div>
+          </div>
+          {/* Mid */}
+          <div style={{ flex: 1, padding: '.75rem 1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', background: '#fffdf7' }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 900, letterSpacing: '.12em', textTransform: 'uppercase', color: O, marginBottom: 3 }}>{category}</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1rem', fontWeight: 900, color: INK, lineHeight: 1.1, marginBottom: '.3rem' }}>{name}</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 700, color: '#7a4a20', marginBottom: '.5rem' }}>{meta}</div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 3, justifyContent: 'center' }}>
+              {chips?.map((c, i) => (
+                <span key={i} style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.4rem', fontWeight: 900, background: 'rgba(255,255,255,.8)', border: `1.5px solid ${BR}`, borderRadius: 10, padding: '2px 6px', color: BR }}>{c}</span>
+              ))}
+            </div>
+          </div>
+          {/* Bottom */}
+          <div style={{ padding: '.65rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: `2px solid ${INK}`, background: botBg }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.9rem', fontWeight: 900, color: 'white' }}>{price}</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.42rem', fontWeight: 900, letterSpacing: '.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,.6)' }}>{weight}</div>
           </div>
         </div>
-        {/* Bottom */}
-        <div style={{ padding: '.65rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: `2px solid ${INK}`, background: botBg }}>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.9rem', fontWeight: 900, color: 'white' }}>{price}</div>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.42rem', fontWeight: 900, letterSpacing: '.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,.6)' }}>{weight}</div>
-        </div>
-      </div>
+      )}
       {/* Footer */}
       <div style={{ padding: '1rem 1.25rem', background: 'white', borderTop: `2px solid rgba(30,15,0,.07)` }}>
         <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.78rem', fontWeight: 900, color: INK, marginBottom: 2 }}>{footTitle}</div>
@@ -130,8 +135,8 @@ function PkCard({
 }
 
 /* ─── Instagram post ─── */
-function IgPost({ bgColor, emojis, title, tags, caption, delay }: {
-  bgColor: string; emojis?: string; title: React.ReactNode; tags?: { text: string; dark?: boolean }[]; caption: string; delay?: string
+function IgPost({ bgColor, emojis, title, tags, caption, delay, imgUrl }: {
+  bgColor?: string; emojis?: string; title?: React.ReactNode; tags?: { text: string; dark?: boolean }[]; caption: string; delay?: string; imgUrl?: string;
 }) {
   return (
     <div className="sc-reveal" style={{
@@ -142,21 +147,27 @@ function IgPost({ bgColor, emojis, title, tags, caption, delay }: {
       onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.transform = 'translate(-3px,-3px)'; d.style.boxShadow = `8px 8px 0 ${INK}` }}
       onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.transform = ''; d.style.boxShadow = `5px 5px 0 ${INK}` }}
     >
-      <div style={{ aspectRatio: '1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '.4rem', padding: '.75rem', background: bgColor, position: 'relative' }}>
-        {emojis && <div style={{ fontSize: '3.2rem' }}>{emojis}</div>}
-        <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1rem', fontWeight: 900, textAlign: 'center', lineHeight: 1.15 }}>{title}</div>
-        {tags && (
-          <div style={{ display: 'flex', gap: '.35rem', flexWrap: 'wrap', justifyContent: 'center', padding: '0 .5rem' }}>
-            {tags.map((t, i) => (
-              <span key={i} style={{
-                background: t.dark ? Y : 'rgba(255,255,255,.85)', color: INK,
-                fontFamily: 'Nunito, sans-serif', fontSize: '.5rem', fontWeight: 900,
-                padding: '3px 8px', borderRadius: 12, border: `1.5px solid ${INK}`,
-              }}>{t.text}</span>
-            ))}
-          </div>
-        )}
-      </div>
+      {imgUrl ? (
+        <div style={{ width: '100%', aspectRatio: '1', position: 'relative', overflow: 'hidden' }}>
+          <img src={imgUrl} alt={caption} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+      ) : (
+        <div style={{ aspectRatio: '1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '.4rem', padding: '.75rem', background: bgColor, position: 'relative' }}>
+          {emojis && <div style={{ fontSize: '3.2rem' }}>{emojis}</div>}
+          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1rem', fontWeight: 900, textAlign: 'center', lineHeight: 1.15 }}>{title}</div>
+          {tags && (
+            <div style={{ display: 'flex', gap: '.35rem', flexWrap: 'wrap', justifyContent: 'center', padding: '0 .5rem' }}>
+              {tags.map((t, i) => (
+                <span key={i} style={{
+                  background: t.dark ? Y : 'rgba(255,255,255,.85)', color: INK,
+                  fontFamily: 'Nunito, sans-serif', fontSize: '.5rem', fontWeight: 900,
+                  padding: '3px 8px', borderRadius: 12, border: `1.5px solid ${INK}`,
+                }}>{t.text}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
       <div style={{ background: 'white', padding: '.6rem .75rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.52rem', fontWeight: 800, color: INK }}>{caption}</span>
         <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 900, color: O }}>@sabhi.chef</span>
@@ -209,11 +220,11 @@ export default function SabhiChef() {
             <em style={{ fontStyle: 'italic', fontWeight: 300, color: G }}>Brand</em>
           </h1>
 
-          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '4rem', flexWrap: 'wrap' }}>
+          <div className="hero-flex" style={{ display: 'flex', alignItems: 'flex-end', gap: '4rem', flexWrap: 'wrap' }}>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.95rem', fontWeight: 700, lineHeight: 1.7, color: '#5a3010', maxWidth: 380 }}>
               Website, packaging, social media, and brand identity — for a homemade food brand born from a mother's kitchen.
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginLeft: 'auto' }}>
+            <div className="hero-pill-group" style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginLeft: 'auto' }}>
               {['🌐 Website Design', '📦 Packaging', '📸 Social Media', '🎨 Illustration'].map((pill, i) => (
                 <span key={i} style={{
                   background: 'white', border: `2.5px solid ${BR}`, borderRadius: 30,
@@ -224,6 +235,12 @@ export default function SabhiChef() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div style={{ position: 'absolute', right: 'clamp(24px,5vw,64px)', bottom: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '.75rem' }}>
+          <div style={{ width: 2, height: 80, background: BR }} />
+          <span style={{ writingMode: 'vertical-rl', fontFamily: 'Nunito, sans-serif', fontSize: '.65rem', fontWeight: 900, letterSpacing: '.2em', textTransform: 'uppercase', color: BR, marginBottom: '2rem' }}>Scroll</span>
         </div>
       </section>
 
@@ -246,7 +263,7 @@ export default function SabhiChef() {
 
       {/* ════ BRIEF + BRAND IDENTITY ════ */}
       <section style={{ background: CREAM, borderBottom: `3px solid ${INK}`, padding: 'clamp(56px,9vw,112px) clamp(24px,5vw,64px)' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '5rem', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '5rem', alignItems: 'start' }}>
 
           {/* Left */}
           <div className="sc-reveal">
@@ -330,8 +347,14 @@ export default function SabhiChef() {
               </div>
             </div>
 
+            <div style={{ display: 'flex', gap: '1.25rem' }}>
+              <div style={{ flex: 1, border: `3px solid ${INK}`, borderRadius: 20, overflow: 'hidden', boxShadow: `5px 5px 0 ${INK}` }}>
+                <img src="/Sabhi Chef/Logo/Asset 6@2x.png" alt="Primary Logo" style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#fff' }} />
+              </div>
+            </div>
+
             {/* Logo on dark + light */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+            <div className="logo-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
               {/* Dark bg */}
               <div style={{ border: `3px solid ${INK}`, borderRadius: 20, overflow: 'hidden', boxShadow: `5px 5px 0 ${INK}` }}>
                 <div style={{ background: INK, borderRadius: 14, padding: '1.4rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -398,7 +421,7 @@ export default function SabhiChef() {
               </div>
             </div>
             {/* Hero strip */}
-            <div style={{ position: 'relative', minHeight: 300, background: Y, padding: '1.5rem', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
+            <div className="browser-hero-strip" style={{ position: 'relative', minHeight: 300, background: Y, padding: '1.5rem', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: -30, right: -30, width: 160, height: 160, borderRadius: '50%', background: O, opacity: .15 }} />
               <div style={{ position: 'relative', zIndex: 2 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1.5rem', fontWeight: 900, color: BR, lineHeight: 1, letterSpacing: '-.02em' }}><span style={{ color: R }}>Ghar ka</span><br />Khana</div>
@@ -409,12 +432,12 @@ export default function SabhiChef() {
                 </div>
               </div>
               {/* Stat card */}
-              <div style={{ position: 'absolute', top: '1.25rem', right: '1.5rem', background: 'white', border: `2.5px solid ${INK}`, borderRadius: 12, padding: '.75rem 1rem', boxShadow: `4px 4px 0 ${INK}`, zIndex: 3 }}>
+              <div className="browser-stat-card" style={{ position: 'absolute', top: '1.25rem', right: '1.5rem', background: 'white', border: `2.5px solid ${INK}`, borderRadius: 12, padding: '.75rem 1rem', boxShadow: `4px 4px 0 ${INK}`, zIndex: 3 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1.1rem', fontWeight: 900, color: O, lineHeight: 1 }}>5 min</div>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.42rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '.08em', color: BR }}>Avg. Cook Time</div>
               </div>
               {/* Mini product inset */}
-              <div style={{ position: 'absolute', bottom: '1rem', right: '1rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.5rem', width: '45%', zIndex: 2 }}>
+              <div className="browser-mockup-inset" style={{ position: 'absolute', bottom: '1rem', right: '1rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '.5rem', width: '45%', zIndex: 2 }}>
                 {[
                   { emoji: '🥣', bg: '#ffecd4', name: 'Khichdi', price: '₹150' },
                   { emoji: '🫓', bg: '#e0f5e8', name: 'Chila',   price: '₹150' },
@@ -432,7 +455,7 @@ export default function SabhiChef() {
               </div>
             </div>
             {/* Filter bar */}
-            <div style={{ background: CREAM, borderTop: `2px solid rgba(30,15,0,.08)`, padding: '.6rem 1.5rem', display: 'flex', gap: '.4rem' }}>
+            <div style={{ background: CREAM, borderTop: `2px solid rgba(30,15,0,.08)`, padding: '.6rem 1.5rem', display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
               {['All', 'Breakfast', 'Meals', 'Sweet & Drinks', 'Condiments'].map((f, i) => (
                 <span key={f} style={{
                   fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 900,
@@ -444,7 +467,7 @@ export default function SabhiChef() {
               ))}
             </div>
             {/* Product strip */}
-            <div style={{ background: 'white', borderTop: `2.5px solid ${INK}`, padding: '.75rem 1.5rem', display: 'flex', gap: '.6rem', overflow: 'hidden', alignItems: 'center' }}>
+            <div style={{ background: 'white', borderTop: `2.5px solid ${INK}`, padding: '.75rem 1.5rem', display: 'flex', gap: '.6rem', overflowX: 'auto', alignItems: 'center' }}>
               <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.52rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '.08em', color: BR, whiteSpace: 'nowrap', marginRight: '.35rem' }}>Products</span>
               {[
                 { emoji: '🥣', bg: '#ffecd4', name: 'Khichdi', price: '₹150' },
@@ -481,12 +504,12 @@ export default function SabhiChef() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '1.5rem' }}>
-          <PkCard topBg={Y} category="Comfort Meal"        name="Masala Khichdi"   meta="150 gm · Serves 2 · 5 mins"  chips={['🌿 No Preservatives','🇮🇳 Authentic','💧 Just Add Water']} botBg={G}   price="₹150" weight="150 gm" footTitle="Masala Khichdi"  footSub="Comfort Meal · 150 gm" />
-          <PkCard topBg={O} brandLight category="Maharashtrian Special" name="Matki Misal" meta="250 gm · Serves 5 · 5 mins"  chips={['🌶 Authentic Spice','🏠 Home Recipe']}              botBg={BR}  price="₹250" weight="250 gm" footTitle="Matki Misal"    footSub="Maharashtrian · 250 gm" delay=".1s" />
-          <PkCard topBg={OL} category="Healthy Breakfast"  name="Moong Chila"      meta="150 gm · Makes 6 · 4 mins"   chips={['💚 High Protein','🌿 No Preservatives']}                     botBg={G}   price="₹150" weight="150 gm" footTitle="Moong Chila"   footSub="Healthy Breakfast · 150 gm" delay=".2s" />
-          <PkCard topBg="#F4A789" category="Sweet · Eggless" name="Vanilla Cake"   meta="200 gm · Serves 5"           chips={['🥚 Eggless','🎂 Bakery Quality']}                             botBg={R}   price="₹150" weight="200 gm" footTitle="Vanilla Cake"  footSub="Sweet · Eggless · 200 gm" delay=".1s" />
-          <PkCard topBg={Y} category="Breakfast"            name="Instant Poha"    meta="150 gm · Serves 2 · 5 mins"  chips={['⚡ Ready in 5 mins','🇮🇳 Home Style']}                        botBg={BR}  price="₹100" weight="150 gm" footTitle="Instant Poha"  footSub="Breakfast · 150 gm" delay=".2s" />
-          <PkCard topBg="#D89339" brandLight category="Beverage" name="Kashmiri Kahwa" meta="150 gm · Serves 20 · 1 min" chips={['🌸 Saffron & Spices','☕ Aromatic']}                      botBg={INK} price="₹150" weight="150 gm" footTitle="Kashmiri Kahwa" footSub="Beverage · 150 gm" delay=".3s" />
+          <PkCard imgUrl="/Sabhi Chef/Mockups/Masala KHichdi.jpg" topBg={Y} category="Comfort Meal"        name="Masala Khichdi"   meta="150 gm · Serves 2 · 5 mins"  chips={['🌿 No Preservatives','🇮🇳 Authentic','💧 Just Add Water']} botBg={G}   price="₹150" weight="150 gm" footTitle="Masala Khichdi"  footSub="Comfort Meal · 150 gm" />
+          <PkCard imgUrl="/Sabhi Chef/Mockups/Matki Misal.jpg" topBg={O} brandLight category="Maharashtrian Special" name="Matki Misal" meta="250 gm · Serves 5 · 5 mins"  chips={['🌶 Authentic Spice','🏠 Home Recipe']}              botBg={BR}  price="₹250" weight="250 gm" footTitle="Matki Misal"    footSub="Maharashtrian · 250 gm" delay=".1s" />
+          <PkCard imgUrl="/Sabhi Chef/Mockups/Moong Chilla.jpg" topBg={OL} category="Healthy Breakfast"  name="Moong Chila"      meta="150 gm · Makes 6 · 4 mins"   chips={['💚 High Protein','🌿 No Preservatives']}                     botBg={G}   price="₹150" weight="150 gm" footTitle="Moong Chila"   footSub="Healthy Breakfast · 150 gm" delay=".2s" />
+          <PkCard imgUrl="/Sabhi Chef/Mockups/Vanila Cake.jpg" topBg="#F4A789" category="Sweet · Eggless" name="Vanilla Cake"   meta="200 gm · Serves 5"           chips={['🥚 Eggless','🎂 Bakery Quality']}                             botBg={R}   price="₹150" weight="200 gm" footTitle="Vanilla Cake"  footSub="Sweet · Eggless · 200 gm" delay=".1s" />
+          <PkCard imgUrl="/Sabhi Chef/Mockups/Instant Poha.jpg" topBg={Y} category="Breakfast"            name="Instant Poha"    meta="150 gm · Serves 2 · 5 mins"  chips={['⚡ Ready in 5 mins','🇮🇳 Home Style']}                        botBg={BR}  price="₹100" weight="150 gm" footTitle="Instant Poha"  footSub="Breakfast · 150 gm" delay=".2s" />
+          <PkCard imgUrl="/Sabhi Chef/Mockups/Kashmiri kahwa.jpg" topBg="#D89339" brandLight category="Beverage" name="Kashmiri Kahwa" meta="150 gm · Serves 20 · 1 min" chips={['🌸 Saffron & Spices','☕ Aromatic']}                      botBg={INK} price="₹150" weight="150 gm" footTitle="Kashmiri Kahwa" footSub="Beverage · 150 gm" delay=".3s" />
         </div>
       </section>
 
@@ -504,38 +527,21 @@ export default function SabhiChef() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '1.25rem' }}>
           <IgPost
-            bgColor={Y}
-            emojis="🥣"
-            title={<span style={{ color: BR }}>Masala<br />Khichdi</span>}
-            tags={[{ text: 'Ready in 5 mins ⚡', dark: true }]}
+            imgUrl="/Sabhi Chef/Social Media Posts/Copy of SABHI029_Product Post_Slide_1 copy 5.jpg"
             caption="Ghar ka khana, everyday 🧡"
           />
           <IgPost
-            bgColor={G}
-            emojis="🌿"
-            title={<span style={{ color: Y }}>Zero<br />Preservatives.<br />Always.</span>}
-            tags={[{ text: '🏠 Homemade', dark: true }, { text: '✅ FSSAI', dark: true }]}
+            imgUrl="/Sabhi Chef/Social Media Posts/Copy of SABHI018_Christmas Post_Slide_1 copy 5.jpg"
             caption="Real food. Real ingredients."
             delay=".1s"
           />
           <IgPost
-            bgColor={O}
-            title={<span style={{ color: 'white' }}>Can't decide?<br />We did it for you.</span>}
-            tags={[
-              { text: 'Moong Chila' }, { text: 'Dosa' },
-              { text: 'Pancake' }, { text: 'Instant Poha' },
-            ]}
+            imgUrl="/Sabhi Chef/Social Media Posts/Copy of SABHI039_Messy Kitchen_Slide_1 copy 5.jpg"
             caption="Pick your morning 🌤"
             delay=".2s"
           />
           <IgPost
-            bgColor={INK}
-            title={
-              <span style={{ color: 'white', fontFamily: 'Nunito, sans-serif', fontSize: '.82rem', fontWeight: 700, fontStyle: 'italic', lineHeight: 1.5 }}>
-                "I just wanted my daughter to have a warm meal..."
-              </span>
-            }
-            tags={[{ text: 'Born from love 💛', dark: true }]}
+            imgUrl="/Sabhi Chef/Social Media Posts/Copy of SABHI031_Testimonials_Slide_1 copy 5.jpg"
             caption="The story behind every pack"
             delay=".3s"
           />
@@ -586,6 +592,24 @@ export default function SabhiChef() {
             </div>
           ))}
         </div>
+
+        <div className="sc-reveal" style={{ marginTop: '4rem', borderRadius: 20, overflow: 'hidden', border: `3px solid ${INK}`, boxShadow: `8px 8px 0 ${INK}` }}>
+          <img src="/Sabhi Chef/Illustrations/Artboard 1.png" alt="Illustrations" style={{ width: '100%', display: 'block' }} />
+        </div>
+      </section>
+
+      {/* ════ POSTERS ════ */}
+      <section style={{ background: '#fffdf7', borderBottom: `3px solid ${INK}`, padding: 'clamp(56px,9vw,112px) clamp(24px,5vw,64px)' }}>
+        <div className="sc-reveal" style={{ marginBottom: '3.5rem' }}>
+          <Tag>Posters</Tag>
+          <SH>Visuals that <em style={{ fontStyle: 'italic', fontWeight: 300, color: G }}>pop.</em></SH>
+        </div>
+        <div className="posters-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: '2rem' }}>
+          <img className="sc-reveal" src="/Sabhi Chef/Posters/Comfort_Food-02.jpg" alt="Poster 1" style={{ width: '100%', borderRadius: 16, border: `3px solid ${INK}`, boxShadow: `5px 5px 0 ${INK}` }} />
+          <img className="sc-reveal" src="/Sabhi Chef/Posters/Maharashtrian_delight-02.jpg" alt="Poster 2" style={{ width: '100%', borderRadius: 16, border: `3px solid ${INK}`, boxShadow: `5px 5px 0 ${INK}`, transitionDelay: '.1s' }} />
+          <img className="sc-reveal" src="/Sabhi Chef/Posters/Artboard 1-100 (1).jpg" alt="Poster 3" style={{ width: '100%', borderRadius: 16, border: `3px solid ${INK}`, boxShadow: `5px 5px 0 ${INK}`, transitionDelay: '.2s' }} />
+          <img className="sc-reveal" src="/Sabhi Chef/Posters/Artboard 1-100 (2).jpg" alt="Poster 4" style={{ width: '100%', borderRadius: 16, border: `3px solid ${INK}`, boxShadow: `5px 5px 0 ${INK}`, transitionDelay: '.3s' }} />
+        </div>
       </section>
 
       {/* ════ RESULTS ════ */}
@@ -609,7 +633,7 @@ export default function SabhiChef() {
               onMouseEnter={e => { const d = e.currentTarget as HTMLDivElement; d.style.transform = 'translate(-3px,-3px)'; d.style.boxShadow = `8px 8px 0 ${INK}` }}
               onMouseLeave={e => { const d = e.currentTarget as HTMLDivElement; d.style.transform = ''; d.style.boxShadow = `5px 5px 0 ${INK}` }}
             >
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: r.large ? 'clamp(2rem,3.5vw,3.5rem)' : 'clamp(2.8rem,5vw,4.8rem)', fontWeight: 900, color: r.color, lineHeight: r.large ? 1.1 : 1, letterSpacing: '-.04em', marginBottom: '.4rem', whiteSpace: 'pre-line' }}>{r.num}<span style={{ color: G }}>{r.numSuffix}</span></div>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: r.large ? 'clamp(2rem,3.5vw,3.5rem)' : 'clamp(2.8rem,5vw,4.8rem)', fontWeight: 900, color: r.color, lineHeight: r.large ? 1.1 : 1, letterSpacing: '-.04em', marginBottom: '.4rem', whiteSpace: 'pre-line' }}>{r.num}<span style={{ color: G, fontSize: 'clamp(1rem,2vw,1.5rem)', display: 'inline-block', marginLeft: '0.2rem', verticalAlign: 'middle', letterSpacing: 0 }}>{r.numSuffix}</span></div>
               <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.72rem', fontWeight: 800, color: '#7a4a20', textTransform: 'uppercase', letterSpacing: '.08em', lineHeight: 1.5, whiteSpace: 'pre-line' }}>{r.label}</div>
             </div>
           ))}
@@ -618,7 +642,7 @@ export default function SabhiChef() {
 
       {/* ════ TESTIMONIAL ════ */}
       <section style={{ background: INK, borderTop: `3px solid ${Y}`, borderBottom: `3px solid ${Y}`, padding: 'clamp(56px,9vw,112px) clamp(24px,5vw,64px)' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className="testimonial-grid" style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '4rem', alignItems: 'center' }}>
           <div className="sc-reveal" style={{ fontFamily: 'Nunito, sans-serif', fontSize: '12rem', fontWeight: 900, color: Y, lineHeight: .7, opacity: .2, alignSelf: 'flex-start' }}>"</div>
           <div className="sc-reveal" style={{ transitionDelay: '.1s' }}>
             <blockquote style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(1.2rem,2.5vw,2rem)', fontWeight: 700, lineHeight: 1.6, color: 'white', fontStyle: 'italic', marginBottom: '1.75rem' }}>
@@ -635,7 +659,7 @@ export default function SabhiChef() {
       <a
         href="/case-studies/eazytaxes-brand"
         onClick={e => { e.preventDefault(); navigate('/case-studies/eazytaxes-brand') }}
-        className="cursor-none no-underline"
+        className="cursor-none no-underline next-project-flex"
         style={{ background: INK, borderTop: `3px solid ${Y}`, padding: 'clamp(48px,7vw,80px) clamp(24px,5vw,64px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', transition: 'background .4s', gap: '2rem' }}
         onMouseEnter={e => (e.currentTarget.style.background = '#120a00')}
         onMouseLeave={e => (e.currentTarget.style.background = INK)}
@@ -656,6 +680,18 @@ export default function SabhiChef() {
         @keyframes sc-tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .sc-reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s cubic-bezier(0.16,1,0.3,1), transform .75s cubic-bezier(0.16,1,0.3,1); }
         .sc-reveal.visible { opacity: 1; transform: translateY(0); }
+        
+        @media (max-width: 768px) {
+          .hero-flex { align-items: flex-start !important; gap: 2rem !important; }
+          .hero-pill-group { margin-left: 0 !important; }
+          .logo-grid { grid-template-columns: 1fr !important; }
+          .browser-hero-strip { flex-direction: column !important; align-items: stretch !important; gap: 2rem; }
+          .browser-stat-card { position: relative !important; top: auto !important; right: auto !important; width: fit-content; margin-bottom: 0rem; }
+          .browser-mockup-inset { position: relative !important; bottom: auto !important; right: auto !important; width: 100% !important; margin-top: 1rem; }
+          .posters-grid { grid-template-columns: 1fr !important; }
+          .testimonial-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+          .next-project-flex { flex-direction: column; align-items: flex-start !important; gap: 1rem !important; }
+        }
       `}</style>
     </div>
   )

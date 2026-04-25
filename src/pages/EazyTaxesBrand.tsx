@@ -82,7 +82,7 @@ export default function EazyTaxesBrand() {
         position:             'relative',
         overflow:             'hidden',
         display:              'grid',
-        gridTemplateColumns:  '1fr 1fr',
+        gridTemplateColumns:  'repeat(auto-fit, minmax(320px, 1fr))',
         alignItems:           'center',
         gap:                   0,
       }}>
@@ -162,7 +162,7 @@ export default function EazyTaxesBrand() {
       {/* ════ 01 · THE BRIEF ════ */}
       <section id="brief" style={{ ...sectionPY, background: PAPER }}>
         <div style={containerStyle}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 7vw, 100px)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(48px, 7vw, 100px)', alignItems: 'center' }}>
             {/* Left */}
             <div className="reveal">
               <SecTag text="01 · The Brief" />
@@ -226,7 +226,7 @@ export default function EazyTaxesBrand() {
 
       {/* ════ 03 · COLLATERAL SPLIT ════ */}
       <section style={{ background: PAPER, ...sectionPY, padding: 0 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, minHeight: 560 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 0, minHeight: 560 }}>
           {/* Image */}
           <div className="reveal" style={{ overflow: 'hidden', position: 'relative' }}>
             <img src="/eazytaxes-work/work4.jpeg" alt="EazyTaxes Collateral" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: `transform .8s ${EASE}` }}
@@ -273,7 +273,7 @@ export default function EazyTaxesBrand() {
           <SecHeading white>Clean, structural &amp; <em style={{ color: TEAL, fontStyle: 'normal', fontWeight: 'inherit' }}>accessible.</em></SecHeading>
 
           {/* Logo variants */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2, position: 'relative', zIndex: 1, marginTop: 40 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 2, position: 'relative', zIndex: 1, marginTop: 40 }}>
             {[
               { bg: 'transparent', border: '1px solid rgba(255,255,255,.04)', eazy: WHITE, taxes: TEAL,  label: 'PRIMARY MARK',  labelColor: 'rgba(255,255,255,.3)' },
               { bg: TEAL,          border: 'none',                            eazy: WHITE, taxes: WHITE,  label: 'ON TEAL',       labelColor: 'rgba(255,255,255,.6)' },
@@ -292,7 +292,7 @@ export default function EazyTaxesBrand() {
           </div>
 
           {/* Color swatches */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', marginTop: 3, position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', marginTop: 3, position: 'relative', zIndex: 1 }}>
             {[
               { bg: TEAL,       name: 'TEAL',       hex: '#3fb9cb', textColor: WHITE },
               { bg: TEAL_DARK,  name: 'TEAL DARK',  hex: '#3098a6', textColor: WHITE },
@@ -312,7 +312,7 @@ export default function EazyTaxesBrand() {
 
       {/* ════ IMAGE MOSAIC ════ */}
       <section style={{ background: WHITE }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 3 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gridTemplateRows: 'auto auto', gap: 3 }}>
           {/* Full width */}
           <div className="reveal" style={{ gridColumn: '1/-1', overflow: 'hidden', position: 'relative', minHeight: 360 }}>
             <img src="/eazytaxes-work/work3.jpeg" alt="Brand Guidelines" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: `transform .7s ${EASE}` }}
@@ -350,7 +350,7 @@ export default function EazyTaxesBrand() {
         </div>
         {/* Merch grid — full-width inside padding */}
         <div style={{ padding: '0 clamp(24px, 5vw, 80px)' }}>
-          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3, marginTop: 48, transitionDelay: '.2s' }}>
+          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 3, marginTop: 48, transitionDelay: '.2s' }}>
             {[
               { src: '/merch-pens.jpg', badge: 'Branded Pens', badgeTeal: false },
               { src: '/merch-mugs.jpg', badge: 'Branded Mugs', badgeTeal: true  },
@@ -382,7 +382,7 @@ export default function EazyTaxesBrand() {
         <div style={containerStyle}>
           <SecTag text="05 · Process" />
           <SecHeading>Designing for <em style={{ color: TEAL, fontStyle: 'normal', fontWeight: 'inherit' }}>Trust.</em></SecHeading>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2, marginTop: 56, position: 'relative' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 2, marginTop: 56, position: 'relative' }}>
             {/* Connector line */}
             <div style={{ content: '', position: 'absolute', top: 36, left: 0, right: 0, height: 1, background: `linear-gradient(90deg, ${TEAL}, rgba(67,147,166,.1))`, zIndex: 0 }} />
             {[
@@ -409,7 +409,7 @@ export default function EazyTaxesBrand() {
         <div style={containerStyle}>
           <SecTag text="06 · Deliverables" white />
           <SecHeading white>The Branding <em style={{ color: TEAL, fontStyle: 'normal', fontWeight: 'inherit' }}>Toolkit.</em></SecHeading>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2, marginTop: 40 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 2, marginTop: 40 }}>
             {[
               { icon: '◉', title: 'Primary Mark',  desc: 'Flexible logo system for all digital and physical applications.' },
               { icon: '◻', title: 'Visual System', desc: 'A strict typographic and color framework for tax reporting.' },
@@ -437,7 +437,7 @@ export default function EazyTaxesBrand() {
         <div style={{ ...containerStyle, position: 'relative', zIndex: 1 }}>
           <SecTag text="07 · Results" white />
           <SecHeading white>Measured <em style={{ color: TEAL, fontStyle: 'normal', fontWeight: 'inherit' }}>Impact.</em></SecHeading>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2, marginTop: 40, position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 2, marginTop: 40, position: 'relative', zIndex: 1 }}>
             {[
               { num: '↑45%', numTeal: true,  label: 'Trust Index', desc: 'Post-launch surveys showed a significant leap in perceived professional authority.' },
               { num: '100%', numTeal: false,  label: 'Adherence',   desc: 'Successful internal rollout with zero deviations from the new guidelines.' },
