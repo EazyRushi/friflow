@@ -4,18 +4,19 @@ const CS_ROUTES: Record<string, string> = {
   'eazytaxes-brand': '/case-studies/eazytaxes-brand',
   'sabhi-chef': '/case-studies/sabhi-chef',
   'lmc': '/case-studies/lmc',
+  'finca-ventoso': '/case-studies/finca-ventoso',
   'ui-ux': '/case-studies/ui-ux',
   'motion-graphics': '/case-studies/motion-graphics',
   'brand-identity': '/case-studies/brand-identity',
 }
 
 const works = [
+  { file: 'finca-ventoso',   label: 'Finca Ventoso', cat: 'Brand Identity', title: 'Finca Ventoso', year: '2025', bg: 'linear-gradient(135deg,#082d20,#051c14,#020b08)', image: '/Finca-Ventoso/Blue Png.png', span: false, containImage: true },
   { file: 'eazytaxes-brand', label: 'EazyTaxes', cat: 'Brand Identity · Strategy', title: 'EazyTaxes Brand Evolution', year: '2025', bg: 'linear-gradient(135deg,#fff,#f5f5f5)', image: '/eazytaxes-work/logo.jpg', span: false, containImage: true },
   { file: 'lmc',             label: 'Los 100 Mejores', cat: 'Identity · Logos', title: 'Los 100 Mejores', year: '2025', bg: 'linear-gradient(135deg,#7a1216,#4a0a0d,#1e0405)', image: '/LMC/Mockups/1.png', span: false },
   { file: 'sabhi-chef',      label: 'Brand & Product', cat: 'Brand · Website · Packaging', title: 'Sabhi Chef', year: '2025', bg: 'linear-gradient(135deg,#824419,#552A0D,#291405)', image: '/Sabhi Chef/Logo/Asset 6@2x.png', span: false, containImage: true },
   { file: 'ui-ux',           label: 'UI / UX Design', cat: 'UI / UX Design', title: 'Cipher Finance Platform', year: '2025', bg: 'linear-gradient(135deg,#180408,#3d0a18,#6b1430)', image: undefined, span: false },
   { file: 'motion-graphics', label: 'Motion Graphics', cat: 'Motion Graphics · Film', title: 'Volta Energy Brand Film', year: '2025', bg: 'linear-gradient(135deg,#040c14,#0a1e2e,#143050)', image: undefined, span: false },
-  { file: 'brand-identity',  label: 'Brand Identity', cat: 'Packaging · Brand Identity', title: 'Aurore Beauty Rebrand', year: '2025', bg: 'linear-gradient(135deg,#1a0800,#3d1500,#6b2800)', image: undefined, span: false },
 ]
 
 export default function Work() {

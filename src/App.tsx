@@ -10,6 +10,7 @@ import UIUX from './pages/UIUX'
 import EazyTaxesBrand from './pages/EazyTaxesBrand'
 import SabhiChef from './pages/SabhiChef'
 import LMCCaseStudy from './pages/LMCCaseStudy'
+import FincaVentoso from './pages/FincaVentoso'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/case-studies/eazytaxes-brand" element={<EazyTaxesBrand />} />
         <Route path="/case-studies/sabhi-chef" element={<SabhiChef />} />
         <Route path="/case-studies/lmc" element={<LMCCaseStudy />} />
+        <Route path="/case-studies/finca-ventoso" element={<FincaVentoso />} />
       </Routes>
     </BrowserRouter>
   )

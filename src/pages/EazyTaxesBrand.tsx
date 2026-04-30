@@ -75,80 +75,110 @@ export default function EazyTaxesBrand() {
       <CsNavbar accentColor={TEAL} bgScrolled="rgba(255,255,255,.95)" textColor={INK} mutedColor={INK_LIGHT} ctaTextColor="#fff" />
 
       {/* ════ HERO ════ */}
-      <section style={{
-        minHeight:            '100vh',
-        paddingTop:            64,
-        background:            WHITE,
-        position:             'relative',
-        overflow:             'hidden',
-        display:              'grid',
-        gridTemplateColumns:  'repeat(auto-fit, minmax(320px, 1fr))',
-        alignItems:           'center',
-        gap:                   0,
+      <section className="et-hero" style={{
+        minHeight: '100vh', paddingTop: 64, background: WHITE,
+        position: 'relative', overflow: 'hidden',
       }}>
         {/* Dot pattern */}
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(67,147,166,.1) 1px, transparent 1px)', backgroundSize: '32px 32px', pointerEvents: 'none' }} />
         {/* Blob */}
         <div style={{ position: 'absolute', right: '-10%', top: '10%', width: '55vw', height: '55vw', maxWidth: 700, maxHeight: 700, background: 'radial-gradient(ellipse, rgba(67,147,166,.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        {/* Watermark */}
+        <div style={{ position: 'absolute', right: '-3%', top: '50%', transform: 'translateY(-50%)', fontFamily: 'Aileron, sans-serif', fontSize: 'clamp(180px, 22vw, 360px)', fontWeight: 900, color: 'rgba(63,185,203,.035)', lineHeight: 1, pointerEvents: 'none', userSelect: 'none', letterSpacing: -8 }}>ET</div>
 
-        {/* Hero left */}
-        <div style={{ padding: 'clamp(60px, 8vw, 120px) clamp(32px, 5vw, 80px) clamp(60px, 8vw, 120px) clamp(24px, 5vw, 80px)', position: 'relative', zIndex: 2 }}>
-          <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 12, background: 'rgba(67,147,166,.1)', border: '1px solid rgba(67,147,166,.2)', padding: '8px 16px', marginBottom: 32 }}>
-            <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', color: TEAL }}>Brand Identity · 12 Weeks · 2025</span>
-          </div>
-
-          <h1 className="reveal" style={{ fontSize: 'clamp(40px, 5.5vw, 76px)', fontWeight: 900, letterSpacing: '-2.5px', lineHeight: .92, color: INK, marginBottom: 24, transitionDelay: '.1s' }}>
-            <span style={{ color: INK }}>eazy</span><span style={{ color: TEAL }}>taxes</span><br />
-            <span style={{ color: TEAL, fontStyle: 'normal', fontWeight: 'inherit' }}>Brand Evolution</span>
-          </h1>
-
-          <p className="reveal" style={{ fontSize: 'clamp(15px, 1.3vw, 17px)', lineHeight: 1.8, color: INK_LIGHT, maxWidth: 480, marginBottom: 44, fontWeight: 300, transitionDelay: '.18s' }}>
-            A comprehensive visual system for a modern tax advisory firm — balancing architectural precision with immediate, accessible authority across every touchpoint.
-          </p>
-
-          <div className="reveal flex items-center flex-wrap" style={{ gap: 16, marginBottom: 56, transitionDelay: '.26s' }}>
-            <a href="#brief" onClick={e => { e.preventDefault(); document.querySelector('#brief')?.scrollIntoView({ behavior: 'smooth' }) }}
-              className="cursor-none"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 12, background: INK, color: WHITE, padding: '15px 32px', fontSize: 11, fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', textDecoration: 'none', transition: 'background .2s, gap .2s' }}
-              onMouseEnter={e => { e.currentTarget.style.background = TEAL; e.currentTarget.style.gap = '18px' }}
-              onMouseLeave={e => { e.currentTarget.style.background = INK; e.currentTarget.style.gap = '12px' }}>
-              View Case Study <span>↓</span>
-            </a>
-            <a href="https://eazytaxes.com" target="_blank" rel="noopener noreferrer"
-              className="cursor-none"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: INK, borderBottom: `1.5px solid ${INK}`, paddingBottom: 2, fontSize: 11, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', transition: 'color .2s, border-color .2s, gap .2s' }}
-              onMouseEnter={e => { e.currentTarget.style.color = TEAL; e.currentTarget.style.borderColor = TEAL; e.currentTarget.style.gap = '16px' }}
-              onMouseLeave={e => { e.currentTarget.style.color = INK; e.currentTarget.style.borderColor = INK; e.currentTarget.style.gap = '10px' }}>
-              Visit Client Site <span>→</span>
-            </a>
-          </div>
-
-          <div className="reveal flex" style={{ gap: 'clamp(24px, 3vw, 48px)', transitionDelay: '.34s' }}>
-            {[
-              { num: <>250<em style={{ color: TEAL, fontStyle: 'normal' }}>+</em></>, label: 'Design Assets' },
-              { num: <>60<em style={{ color: TEAL, fontStyle: 'normal' }}>pg</em></>, label: 'Brand Guidelines' },
-              { num: <><em style={{ color: TEAL, fontStyle: 'normal' }}>↑</em>45<em style={{ color: TEAL, fontStyle: 'normal' }}>%</em></>, label: 'Trust Index' },
-            ].map((s, i) => (
-              <div key={i}>
-                <div style={{ fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 900, letterSpacing: '-1.5px', color: INK, lineHeight: 1 }}>{s.num}</div>
-                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase', color: INK_MUTED, marginTop: 6 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Hero right */}
-        <div style={{ position: 'relative', zIndex: 2, height: '100%', minHeight: 600, overflow: 'hidden' }}>
-          <img src="/eazytaxes-work/work1.jpeg" alt="EazyTaxes Brand" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(240,248,250,.4) 0%, transparent 40%)' }} />
-          {/* Floating card */}
-          <div className="reveal" style={{ position: 'absolute', bottom: 40, left: 32, background: WHITE, padding: '20px 24px', boxShadow: '0 16px 60px rgba(0,0,0,.12)', display: 'flex', alignItems: 'center', gap: 16, minWidth: 220 }}>
-            <div style={{ width: 40, height: 40, background: TEAL_PALE, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <svg width="18" height="18" stroke={TEAL} fill="none" strokeWidth="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <div className="et-hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', gap: 'clamp(40px, 5vw, 80px)', height: 'calc(100vh - 64px)', padding: '0 clamp(32px, 5vw, 80px)' }}>
+          {/* Left — Copy */}
+          <div style={{ position: 'relative', zIndex: 2 }}>
+            <div className="reveal" style={{ display: 'inline-flex', alignItems: 'center', gap: 12, background: 'rgba(67,147,166,.1)', border: '1px solid rgba(67,147,166,.2)', padding: '8px 16px', marginBottom: 32 }}>
+              <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', color: TEAL }}>Brand Identity · 12 Weeks · 2025</span>
             </div>
-            <div>
-              <div style={{ fontSize: 22, fontWeight: 900, letterSpacing: -1, color: INK, lineHeight: 1 }}>100%</div>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: '2.5px', textTransform: 'uppercase', color: INK_MUTED, marginTop: 2 }}>Consistency</div>
+
+            <h1 className="reveal" style={{ fontSize: 'clamp(40px, 5.5vw, 76px)', fontWeight: 900, letterSpacing: '-2.5px', lineHeight: .92, color: INK, marginBottom: 24, transitionDelay: '.1s' }}>
+              <span style={{ color: INK }}>eazy</span><span style={{ color: TEAL }}>taxes</span><br />
+              <span style={{ color: TEAL, fontStyle: 'normal', fontWeight: 'inherit' }}>Brand Evolution</span>
+            </h1>
+
+            <p className="reveal" style={{ fontSize: 'clamp(15px, 1.3vw, 17px)', lineHeight: 1.8, color: INK_LIGHT, maxWidth: 480, marginBottom: 44, fontWeight: 300, transitionDelay: '.18s' }}>
+              A comprehensive visual system for a modern tax advisory firm — balancing architectural precision with immediate, accessible authority across every touchpoint.
+            </p>
+
+            <div className="reveal flex items-center flex-wrap" style={{ gap: 16, marginBottom: 56, transitionDelay: '.26s' }}>
+              <a href="#brief" onClick={e => { e.preventDefault(); document.querySelector('#brief')?.scrollIntoView({ behavior: 'smooth' }) }}
+                className="cursor-none"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 12, background: INK, color: WHITE, padding: '15px 32px', fontSize: 11, fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', textDecoration: 'none', transition: 'background .2s, gap .2s' }}
+                onMouseEnter={e => { e.currentTarget.style.background = TEAL; e.currentTarget.style.gap = '18px' }}
+                onMouseLeave={e => { e.currentTarget.style.background = INK; e.currentTarget.style.gap = '12px' }}>
+                View Case Study <span>↓</span>
+              </a>
+              <a href="https://eazytaxes.com" target="_blank" rel="noopener noreferrer"
+                className="cursor-none"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: INK, borderBottom: `1.5px solid ${INK}`, paddingBottom: 2, fontSize: 11, fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', transition: 'color .2s, border-color .2s, gap .2s' }}
+                onMouseEnter={e => { e.currentTarget.style.color = TEAL; e.currentTarget.style.borderColor = TEAL; e.currentTarget.style.gap = '16px' }}
+                onMouseLeave={e => { e.currentTarget.style.color = INK; e.currentTarget.style.borderColor = INK; e.currentTarget.style.gap = '10px' }}>
+                Visit Client Site <span>→</span>
+              </a>
+            </div>
+
+            <div className="reveal flex" style={{ gap: 'clamp(24px, 3vw, 48px)', transitionDelay: '.34s' }}>
+              {[
+                { num: <>250<em style={{ color: TEAL, fontStyle: 'normal' }}>+</em></>, label: 'Design Assets' },
+                { num: <>60<em style={{ color: TEAL, fontStyle: 'normal' }}>pg</em></>, label: 'Brand Guidelines' },
+                { num: <><em style={{ color: TEAL, fontStyle: 'normal' }}>↑</em>45<em style={{ color: TEAL, fontStyle: 'normal' }}>%</em></>, label: 'Trust Index' },
+              ].map((s, i) => (
+                <div key={i}>
+                  <div style={{ fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 900, letterSpacing: '-1.5px', color: INK, lineHeight: 1 }}>{s.num}</div>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase', color: INK_MUTED, marginTop: 6 }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right — Abstract visual */}
+          <div className="reveal et-hero-visual" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 400, transitionDelay: '.2s' }}>
+            {/* Decorative rings */}
+            <div style={{ position: 'absolute', width: 'clamp(300px, 28vw, 460px)', height: 'clamp(300px, 28vw, 460px)', border: '1px solid rgba(63,185,203,.12)', borderRadius: '50%', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', width: 'clamp(220px, 20vw, 340px)', height: 'clamp(220px, 20vw, 340px)', border: '1px solid rgba(63,185,203,.08)', borderRadius: '50%', pointerEvents: 'none' }} />
+
+            {/* Floating brand card */}
+            <div style={{
+              background: WHITE, borderRadius: 24, boxShadow: '0 32px 80px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.04)',
+              padding: 'clamp(40px, 5vw, 64px) clamp(36px, 4vw, 56px)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, zIndex: 2,
+              animation: 'etFloatCard 5s ease-in-out infinite', position: 'relative',
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${TEAL}, ${TEAL_LIGHT})`, borderRadius: '24px 24px 0 0' }} />
+              <div style={{ fontFamily: 'Aileron, sans-serif', fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 900, letterSpacing: -2, lineHeight: 1 }}>
+                <span style={{ color: INK }}>eazy</span><span style={{ color: TEAL }}>taxes</span>
+              </div>
+              <div style={{ display: 'flex', gap: 8 }}>
+                {[TEAL, TEAL_DARK, TEAL_LIGHT, TEAL_PALE, INK].map((c, i) => (
+                  <div key={i} style={{ width: 28, height: 28, background: c, borderRadius: 6, border: c === TEAL_PALE ? '1px solid rgba(0,0,0,.06)' : 'none' }} />
+                ))}
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase', color: INK_MUTED }}>Brand System</div>
+                <div style={{ fontSize: 12, color: INK_LIGHT, marginTop: 4 }}>Identity · Guidelines · Collateral</div>
+              </div>
+            </div>
+
+            {/* Floating stat badges */}
+            <div className="reveal" style={{ position: 'absolute', top: '12%', right: '5%', background: WHITE, padding: '14px 20px', boxShadow: '0 8px 32px rgba(0,0,0,.08)', display: 'flex', alignItems: 'center', gap: 12, borderRadius: 12, zIndex: 3, animation: 'etFloatBadge1 4s ease-in-out infinite', transitionDelay: '.4s' }}>
+              <div style={{ width: 32, height: 32, background: TEAL_PALE, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <svg width="14" height="14" stroke={TEAL} fill="none" strokeWidth="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div>
+                <div style={{ fontSize: 16, fontWeight: 900, letterSpacing: -0.5, color: INK, lineHeight: 1 }}>100%</div>
+                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase', color: INK_MUTED, marginTop: 2 }}>Consistency</div>
+              </div>
+            </div>
+
+            <div className="reveal" style={{ position: 'absolute', bottom: '15%', left: '2%', background: WHITE, padding: '14px 20px', boxShadow: '0 8px 32px rgba(0,0,0,.08)', display: 'flex', alignItems: 'center', gap: 12, borderRadius: 12, zIndex: 3, animation: 'etFloatBadge2 4.5s ease-in-out infinite', transitionDelay: '.5s' }}>
+              <div style={{ width: 32, height: 32, background: 'rgba(63,185,203,.1)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <svg width="14" height="14" stroke={TEAL} fill="none" strokeWidth="1.5" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+              </div>
+              <div>
+                <div style={{ fontSize: 16, fontWeight: 900, letterSpacing: -0.5, color: INK, lineHeight: 1 }}>↑45%</div>
+                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase', color: INK_MUTED, marginTop: 2 }}>Trust Index</div>
+              </div>
             </div>
           </div>
         </div>
@@ -312,7 +342,7 @@ export default function EazyTaxesBrand() {
 
       {/* ════ IMAGE MOSAIC ════ */}
       <section style={{ background: WHITE }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gridTemplateRows: 'auto auto', gap: 3 }}>
+        <div className="et-mosaic-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'auto auto', gap: 3 }}>
           {/* Full width */}
           <div className="reveal" style={{ gridColumn: '1/-1', overflow: 'hidden', position: 'relative', minHeight: 360 }}>
             <img src="/eazytaxes-work/work3.jpeg" alt="Brand Guidelines" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: `transform .7s ${EASE}` }}
@@ -409,7 +439,7 @@ export default function EazyTaxesBrand() {
         <div style={containerStyle}>
           <SecTag text="06 · Deliverables" white />
           <SecHeading white>The Branding <em style={{ color: TEAL, fontStyle: 'normal', fontWeight: 'inherit' }}>Toolkit.</em></SecHeading>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 2, marginTop: 40 }}>
+          <div className="et-deliverables-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2, marginTop: 40 }}>
             {[
               { icon: '◉', title: 'Primary Mark',  desc: 'Flexible logo system for all digital and physical applications.' },
               { icon: '◻', title: 'Visual System', desc: 'A strict typographic and color framework for tax reporting.' },
@@ -496,6 +526,23 @@ export default function EazyTaxesBrand() {
       </section>
 
       <CsFooter accentColor={TEAL} bgColor={INK} ruleColor="rgba(255,255,255,.06)" textColor={WHITE} mutedColor="rgba(245,240,232,.35)" copyOpacity="0.2" />
+
+      <style>{`
+        @media (max-width: 900px) {
+          .et-deliverables-grid { grid-template-columns: 1fr !important; }
+          .et-mosaic-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (min-width: 901px) and (max-width: 1100px) {
+          .et-deliverables-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @keyframes etFloatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+        @keyframes etFloatBadge1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes etFloatBadge2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @media (max-width: 900px) {
+          .et-hero-grid { grid-template-columns: 1fr !important; height: auto !important; padding-top: 40px !important; padding-bottom: 60px !important; }
+          .et-hero-visual { min-height: 300px !important; }
+        }
+      `}</style>
     </div>
   )
 }
