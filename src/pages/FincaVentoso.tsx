@@ -1,18 +1,15 @@
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import CustomCursor from '../components/CustomCursor'
 import CsNavbar from '../components/CsNavbar'
 import CsFooter from '../components/CsFooter'
 
 /* ─── Brand tokens ─── */
 const DARK_GREEN = '#082d20'
-const BLUE       = '#033e5c'
 const YELLOW     = '#fce89c'
 const WHITE      = '#ffffff'
 const GREY_BLUE  = '#50798e'
 const ORANGE     = '#f26c4f'
 const BEIGE      = '#f0ebdf'
-const LIGHT_GREEN= '#c1e1bb'
 
 function useReveal() {
   useEffect(() => {
@@ -55,7 +52,6 @@ function SecHeading({ children, color = DARK_GREEN }: { children: React.ReactNod
 
 export default function FincaVentoso() {
   useReveal()
-  const navigate = useNavigate()
 
   return (
     <div style={{ background: BEIGE, color: DARK_GREEN, fontFamily: "'Jost', sans-serif", fontWeight: 400, overflowX: 'hidden', cursor: 'none' }}>
