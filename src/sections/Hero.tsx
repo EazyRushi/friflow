@@ -5,7 +5,7 @@ export default function Hero() {
 
   return (
     <section id="home" style={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}
-      className="px-6 pb-12 md:px-14 md:pb-16 lg:px-14 lg:pb-20"
+      className="px-6 pb-16 md:px-14 md:pb-24 lg:px-14 lg:pb-28"
     >
       {/* Background */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
@@ -31,7 +31,7 @@ export default function Hero() {
             <h1 className="hero-h1-anim" style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(44px,9vw,128px)', fontWeight: 800, letterSpacing: -3, lineHeight: .88, color: '#F5F0E8' }}>
               We Build<br />Brands That<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent, letterSpacing: -2 }}>Move.</em>
             </h1>
-            <div className="hero-line-anim" style={{ width: 1, height: 40, background: `linear-gradient(to bottom,${accent},transparent)`, margin: '28px 0' }} />
+            <div className="hero-line-anim" style={{ width: 1, height: 40, background: `linear-gradient(to bottom,${accent},transparent)`, margin: '36px 0' }} />
             <p className="hero-desc-anim" style={{ fontSize: 14, lineHeight: 1.85, color: muted, maxWidth: 460 }}>
               From identity to interface, packaging to film — friflow is a full-service design studio that turns ideas into visual systems that last.
             </p>

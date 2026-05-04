@@ -55,7 +55,7 @@ export default function FincaVentoso() {
 
   return (
     <div style={{ background: BEIGE, color: DARK_GREEN, fontFamily: "'Jost', sans-serif", fontWeight: 400, overflowX: 'hidden', cursor: 'none' }}>
-      <CustomCursor accentColor={ORANGE} ringBorder="rgba(242, 108, 79, .45)" ringBorderHov={ORANGE} />
+      <CustomCursor accentColor={ORANGE} ringBorder="rgba(8,45,32,.45)" ringBorderHov={ORANGE} dotShape="diamond" />
       <CsNavbar accentColor={ORANGE} bgScrolled="rgba(240, 235, 223, .96)" textColor={DARK_GREEN} mutedColor={GREY_BLUE} ctaTextColor="#fff" />
 
       {/* ════ HERO ════ */}

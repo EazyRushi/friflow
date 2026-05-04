@@ -11,7 +11,7 @@ export default function About() {
   const rule = 'rgba(245,240,232,0.07)'
 
   return (
-    <section id="about" className="px-6 py-16 md:px-14 md:py-24 lg:py-28" style={{ borderBottom: `1px solid ${rule}` }}>
+    <section id="about" className="px-6 pb-16 md:px-14 md:pb-24 lg:pb-28" style={{ borderBottom: `1px solid ${rule}`, paddingTop: 'clamp(48px, 6vw, 96px)' }}>
       <p className="sec-label flex items-center gap-4" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 32 }}>
         04 · The Studio
       </p>
@@ -25,10 +25,10 @@ export default function About() {
           <p className="reveal rd1" style={{ fontSize: 14, lineHeight: 1.9, color: muted, marginBottom: 16 }}>
             We are friflow — a full-spectrum design studio. We work with founders, brands, and businesses who want design that genuinely moves the needle.
           </p>
-          <p className="reveal rd2" style={{ fontSize: 14, lineHeight: 1.9, color: muted, marginBottom: 16 }}>
+          <p className="reveal rd2" style={{ fontSize: 14, lineHeight: 1.9, color: muted, marginBottom: 24 }}>
             From a single logo to a complete brand universe, we bring the same obsessive attention to every project. No templates. No shortcuts.
           </p>
-          <div className="reveal rd3 grid grid-cols-2 gap-[3px] mt-10">
+          <div className="reveal rd3 grid grid-cols-2 gap-[3px] mt-14">
             {metrics.map(m => (
               <div key={m.label} className="am-item cursor-none transition-colors duration-300"
                 style={{ background: '#111111', padding: '28px 24px' }}

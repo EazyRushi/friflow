@@ -16,7 +16,7 @@ export default function Disciplines() {
     <div className="grid grid-cols-3 md:grid-cols-6 gap-[1px]" style={{ background: rule }}>
       {disciplines.map((d, i) => (
         <div key={d.name} className={`disc-item reveal rd${i + 1} cursor-none transition-colors duration-300`}
-          style={{ background: '#080808', padding: '28px 16px', textAlign: 'center' }}
+          style={{ background: '#080808', padding: '40px 20px', textAlign: 'center' }}
           onMouseEnter={e => (e.currentTarget.style.background = accent)}
           onMouseLeave={e => (e.currentTarget.style.background = '#080808')}
         >

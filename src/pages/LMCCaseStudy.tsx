@@ -60,7 +60,7 @@ export default function LMCCaseStudy() {
 
   return (
     <div style={{ background: WHITE, color: INK, fontFamily: "'DM Sans', sans-serif", fontWeight: 300, overflowX: 'hidden', cursor: 'none' }}>
-      <CustomCursor accentColor={RED} ringBorder="rgba(194,38,46,.45)" ringBorderHov={RED} />
+      <CustomCursor accentColor={RED} ringBorder="rgba(194,38,46,.5)" ringBorderHov={YELLOW} dotShape="square" ringShape="square" />
       <CsNavbar accentColor={RED} bgScrolled="rgba(255,255,255,.96)" textColor={INK} mutedColor={INK_LIGHT} ctaTextColor="#fff" />
 
       {/* ════ HERO ════ */}
@@ -110,13 +110,7 @@ export default function LMCCaseStudy() {
                padding: 'clamp(40px, 6vw, 72px) clamp(32px, 5vw, 64px)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, zIndex: 2,
                animation: 'floatCard 5s ease-in-out infinite'
              }}>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(72px, 10vw, 110px)', lineHeight: 1, fontWeight: 700, letterSpacing: -2, display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: RED }}>1</span><span style={{ color: YELLOW }}>0</span><span style={{ color: RED }}>0</span>
-                </div>
-                <div style={{ textAlign: 'center', lineHeight: 1.3 }}>
-                  <div style={{ fontSize: 'clamp(18px, 2.5vw, 26px)', fontWeight: 500, letterSpacing: 2, color: INK }}>mejores</div>
-                  <div style={{ fontSize: 'clamp(11px, 1.5vw, 14px)', fontWeight: 300, letterSpacing: 1, color: INK_LIGHT }}>restaurantes de España</div>
-                </div>
+                <img src="/LMC/Logo/logo.jpg" alt="Los 100 Mejores Restaurantes de España Logo" style={{ width: '100%', maxWidth: 300, height: 'auto', display: 'block' }} />
              </div>
           </div>
         </div>
@@ -154,33 +148,12 @@ export default function LMCCaseStudy() {
         </div>
       </section>
 
-      {/* ════ 02 · CHALLENGE ════ */}
-      <section style={{ background: PAPER, padding: 'clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px)' }}>
-        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <SecTag>02 · The Challenge</SecTag>
-          <SecHeading>Four problems.<br/><em style={{ color: RED, fontStyle: 'italic' }}>One system.</em></SecHeading>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(32px, 5vw, 72px)' }}>
-            {[
-              { n: '01', t: 'Authority Without Arrogance', d: 'The brand needed to carry the weight of Spain\'s top culinary institution while remaining approachable for readers and restaurant owners alike. Prestige without intimidation.' },
-              { n: '02', t: 'The Number as a Logo', d: 'Centering a visual identity around "100" — a number — is genuinely hard. Numbers feel generic. We needed to transform those three digits into a memorable, proprietary mark.' },
-              { n: '03', t: 'Spanish Pride, Not a Cliché', d: 'Drawing on the Spanish flag without producing a pastiche of red-and-yellow patriotism. The palette needed to feel cultured and designed, not like a flag stamped onto a page.' },
-              { n: '04', t: 'System-Wide Consistency', d: 'From a 25mm business card to a full-size street billboard, the mark had to hold at every scale. Clear rules, proper exclusion zones, and defined wrong-use cases were essential.' },
-            ].map((c, i) => (
-              <div key={i} className="lmc-reveal" style={{ background: WHITE, borderRadius: 20, padding: 'clamp(28px, 4vw, 48px)', border: '1px solid rgba(0,0,0,.06)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${RED}, ${YELLOW})` }} />
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 48, fontWeight: 700, color: 'rgba(194,38,46,.08)', lineHeight: 1, marginBottom: 16 }}>{c.n}</div>
-                <h3 style={{ fontSize: 16, fontWeight: 600, color: INK, marginBottom: 12 }}>{c.t}</h3>
-                <p style={{ fontSize: 14, color: INK_LIGHT, lineHeight: 1.75 }}>{c.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ════ 03 · PROCESS ════ */}
+
+      {/* ════ 02 · PROCESS ════ */}
       <section style={{ padding: 'clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px)' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <SecTag>03 · Process</SecTag>
+          <SecTag>02 · Process</SecTag>
           <SecHeading>Built on<br/><em style={{ color: RED, fontStyle: 'italic' }}>first principles.</em></SecHeading>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             {[
@@ -231,10 +204,10 @@ export default function LMCCaseStudy() {
         </div>
       </section>
 
-      {/* ════ 04 · COLOUR ════ */}
+      {/* ════ 03 · COLOUR ════ */}
       <section style={{ background: INK, padding: 'clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px)' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <SecTag white>04 · Colour Palette</SecTag>
+          <SecTag white>03 · Colour Palette</SecTag>
           <SecHeading white>Inspired by<br/><em style={{ color: YELLOW, fontStyle: 'italic' }}>the Spanish flag.</em></SecHeading>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(16px, 3vw, 32px)' }}>
             {[
@@ -265,10 +238,10 @@ export default function LMCCaseStudy() {
         </div>
       </section>
 
-      {/* ════ 05 · TYPOGRAPHY ════ */}
+      {/* ════ 04 · TYPOGRAPHY ════ */}
       <section style={{ background: PAPER, padding: 'clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px)' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <SecTag>05 · Typography</SecTag>
+          <SecTag>04 · Typography</SecTag>
           <SecHeading>Futura.<br/><em style={{ color: RED, fontStyle: 'italic' }}>Timeless geometric.</em></SecHeading>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(24px, 4vw, 48px)' }}>
             <div className="lmc-reveal" style={{ background: WHITE, borderRadius: 20, padding: 'clamp(24px, 3vw, 40px)', border: '1px solid rgba(0,0,0,.06)' }}>
@@ -296,48 +269,11 @@ export default function LMCCaseStudy() {
         </div>
       </section>
 
-      {/* ════ 06 · LOGO VERSIONS ════ */}
-      <section style={{ padding: 'clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px)' }}>
-        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <SecTag>06 · Logo Versions</SecTag>
-          <SecHeading>Correct &amp; incorrect<br/><em style={{ color: RED, fontStyle: 'italic' }}>applications.</em></SecHeading>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(16px, 3vw, 28px)' }}>
-            {[
-              { bg: WHITE, c1: RED, c2: YELLOW, c3: RED, t: '#333', name: 'Primary', ok: true },
-              { bg: '#111', c1: WHITE, c2: WHITE, c3: WHITE, t: 'rgba(255,255,255,.7)', name: 'Dark BG', ok: true },
-              { bg: YELLOW, c1: '#111', c2: WHITE, c3: '#111', t: '#111', name: 'Yellow BG', ok: true },
-              { bg: WHITE, c1: RED, c2: YELLOW, c3: RED, t: '#333', name: 'Stretched', ok: false, stretch: true },
-              { bg: WHITE, c1: '#555', c2: YELLOW, c3: '#555', t: RED, name: 'Wrong Colours', ok: false, strike: true },
-              { bg: WHITE, name: 'Missing Mark', ok: false, strike: true, missing: true },
-            ].map((l, i) => (
-              <div key={i} className="lmc-reveal" style={{ borderRadius: 20, overflow: 'hidden', border: '1px solid rgba(0,0,0,.07)' }}>
-                <div style={{ height: 'clamp(140px, 16vw, 200px)', background: l.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 8, position: 'relative' }}>
-                  {!l.missing && (
-                    <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(28px, 4vw, 50px)', fontWeight: 700, lineHeight: 1, transform: l.stretch ? 'scaleX(1.4)' : 'none', opacity: l.stretch || l.strike ? 0.6 : 1 }}>
-                      <span style={{ color: l.c1 }}>1</span><span style={{ color: l.c2 }}>0</span><span style={{ color: l.c3 }}>0</span>
-                    </div>
-                  )}
-                  <div style={{ fontSize: 'clamp(8px, 1.2vw, 12px)', fontWeight: l.strike && !l.missing ? 700 : 400, letterSpacing: 1, textAlign: 'center', color: l.missing ? '#555' : l.t, zIndex: 1 }}>mejores<br/>restaurantes de España</div>
-                  {(l.stretch || l.strike) && (
-                    <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <div style={{ width: '100%', height: 2, background: RED, transform: 'rotate(-15deg)', opacity: .6 }} />
-                    </div>
-                  )}
-                </div>
-                <div style={{ background: PAPER, padding: '14px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: 1.5, textTransform: 'uppercase', color: INK }}>{l.name}</span>
-                  <span style={{ width: 20, height: 20, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, background: l.ok ? 'rgba(34,197,94,.15)' : 'rgba(239,68,68,.12)', color: l.ok ? '#16a34a' : '#dc2626' }}>{l.ok ? '✓' : '✕'}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ════ 07 · MOCKUPS ════ */}
+      {/* ════ 05 · MOCKUPS ════ */}
       <section style={{ background: INK, padding: 'clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px)' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <SecTag white>07 · Brand in the World</SecTag>
+          <SecTag white>05 · Brand in the World</SecTag>
           <SecHeading white>Every<br/><em style={{ color: YELLOW, fontStyle: 'italic' }}>touchpoint.</em></SecHeading>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(20px, 3vw, 36px)', gridAutoFlow: 'row dense' }}>
@@ -350,11 +286,11 @@ export default function LMCCaseStudy() {
         </div>
       </section>
 
-      {/* ════ 08 · RESULTS ════ */}
-      <section style={{ background: RED, position: 'relative', overflow: 'hidden', padding: 'clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px)' }}>
+      {/* ════ 06 · RESULTS ════ */}
+      <section data-cursor-zone="dark" style={{ background: RED, position: 'relative', overflow: 'hidden', padding: 'clamp(80px, 10vw, 140px) clamp(24px, 5vw, 80px)' }}>
         <div style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', fontFamily: "'Playfair Display', serif", fontSize: 'clamp(200px, 30vw, 440px)', fontWeight: 700, color: 'rgba(255,255,255,.04)', lineHeight: 1, pointerEvents: 'none' }}>100</div>
         <div style={{ maxWidth: 1140, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <SecTag white>08 · Outcomes</SecTag>
+          <SecTag white>06 · Outcomes</SecTag>
           <SecHeading white>A system built<br/><em style={{ color: YELLOW, fontStyle: 'italic' }}>to last.</em></SecHeading>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(16px, 3vw, 32px)' }}>
             {[

@@ -11,7 +11,7 @@ export default function Process() {
   const rule = 'rgba(245,240,232,0.07)'
 
   return (
-    <section id="process" className="px-6 py-16 md:px-14 md:py-24 lg:py-28" style={{ borderBottom: `1px solid ${rule}` }}>
+    <section id="process" className="px-6 pb-16 md:px-14 md:pb-24 lg:pb-28" style={{ borderBottom: `1px solid ${rule}`, paddingTop: 'clamp(48px, 6vw, 96px)' }}>
       <p className="sec-label flex items-center gap-4" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 32 }}>
         03 · How We Work
       </p>
@@ -23,10 +23,10 @@ export default function Process() {
       </p>
 
       {/* Steps grid: 1 col → 2 col → 4 col */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] mt-12 md:mt-14" style={{ background: rule }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] mt-16 md:mt-20" style={{ background: rule }}>
         {steps.map((s, i) => (
           <div key={s.num} className={`proc-step reveal rd${i + 1} cursor-none transition-colors duration-300`}
-            style={{ background: '#080808', padding: '40px 28px', position: 'relative' }}
+            style={{ background: '#080808', padding: '48px 32px', position: 'relative' }}
             onMouseEnter={e => { e.currentTarget.style.background = '#111111'; (e.currentTarget.querySelector('.ps-num') as HTMLElement).style.color = accent }}
             onMouseLeave={e => { e.currentTarget.style.background = '#080808'; (e.currentTarget.querySelector('.ps-num') as HTMLElement).style.color = 'rgba(255,107,53,.4)' }}
           >

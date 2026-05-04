@@ -8,7 +8,7 @@ export default function CTA() {
       <div className="px-6 py-20 md:px-14 md:py-32 lg:py-36" style={{ textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 50% at 50% 50%,#1a0a00,#080808)' }} />
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <p className="reveal" style={{ fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: muted, marginBottom: 20 }}>Ready when you are</p>
+          <p className="reveal" style={{ fontSize: 10, letterSpacing: 5, textTransform: 'uppercase', color: muted, marginBottom: 28 }}>Ready when you are</p>
           <h2 className="reveal rd1" style={{ fontFamily: 'Syne, sans-serif', fontSize: 'clamp(40px,8vw,110px)', fontWeight: 800, letterSpacing: -3, lineHeight: .88, color: '#F5F0E8', marginBottom: 40 }}>
             Let's build<br />something <em style={{ color: accent, fontStyle: 'normal' }}>great.</em>
           </h2>

@@ -61,8 +61,11 @@ body::before {
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: transform .1s;
+  transition: transform .15s;
+  box-shadow: 0 0 0 1.5px rgba(8,8,8,0.55);
 }
+.cursor.cursor-sq  { border-radius: 3px; }
+.cursor.cursor-dia { border-radius: 2px; transform: translate(-50%, -50%) rotate(45deg); }
 .cursor-ring {
   position: fixed;
   width: 38px;
@@ -74,10 +77,24 @@ body::before {
   transform: translate(-50%, -50%);
   transition: all .18s ease;
 }
+.cursor-ring.ring-dashed { border-style: dashed; }
+.cursor-ring.ring-sq { border-radius: 6px; }
 .cursor-ring.hov {
   width: 68px;
   height: 68px;
-  border-color: #FF6B35;
+  border-color: var(--cur-hov, #FF6B35);
+}
+/* Zone: cursor over accent/bright section → flip to dark */
+.cursor.cur-dark {
+  background: #080808 !important;
+  box-shadow: 0 0 0 1.5px rgba(245,240,232,0.35) !important;
+}
+.cursor-ring.cur-dark {
+  border-color: rgba(8,8,8,0.45) !important;
+}
+.cursor-ring.cur-dark.hov {
+  border-color: rgba(8,8,8,0.75) !important;
+  background: rgba(8,8,8,0.05);
 }
 
 /* Reveal animation */

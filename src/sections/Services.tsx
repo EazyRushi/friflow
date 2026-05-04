@@ -25,11 +25,11 @@ export default function Services() {
   const rule = 'rgba(245,240,232,0.07)'
 
   return (
-    <section id="services" className="px-6 py-16 md:px-14 md:py-24 lg:px-14 lg:py-28" style={{ borderBottom: `1px solid ${rule}` }}>
+    <section id="services" className="px-6 pb-16 md:px-14 md:pb-24 lg:px-14 lg:pb-28" style={{ borderBottom: `1px solid ${rule}`, paddingTop: 'clamp(48px, 6vw, 96px)' }}>
       {/* Header */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-end mb-12 md:mb-16 lg:mb-[72px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-end mb-16 md:mb-20 lg:mb-28">
         <div>
-          <p className="flex items-center gap-4 sec-label" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 32 }}>
+          <p className="flex items-center gap-4 sec-label" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 48 }}>
             01 · Services
           </p>
           <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(32px,5vw,64px)', letterSpacing: -2, lineHeight: .95, color: '#F5F0E8' }}>

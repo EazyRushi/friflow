@@ -97,7 +97,7 @@ function PkCard({
       onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = ''; (e.currentTarget as HTMLDivElement).style.boxShadow = '' }}
     >
       {imgUrl ? (
-        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', aspectRatio: '3/4', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', aspectRatio: '1/1', position: 'relative', overflow: 'hidden' }}>
           <img src={imgUrl} alt={footTitle} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
       ) : (
@@ -168,9 +168,24 @@ function IgPost({ bgColor, emojis, title, tags, caption, delay, imgUrl }: {
           )}
         </div>
       )}
-      <div style={{ background: 'white', padding: '.6rem .75rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.52rem', fontWeight: 800, color: INK }}>{caption}</span>
-        <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 900, color: O }}>@sabhi.chef</span>
+      <div style={{ background: 'white', padding: '.75rem', display: 'flex', flexDirection: 'column', gap: '.6rem', borderTop: `2px solid rgba(30,15,0,.05)` }}>
+        {/* Action bar */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '.7rem' }}>
+            {/* Heart */}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            {/* Comment */}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            {/* Share */}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </div>
+          {/* Save */}
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '.4rem' }}>
+          <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.65rem', fontWeight: 900, color: INK }}>sabhi.chef</span>
+          <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.6rem', fontWeight: 600, color: INK }}>{caption}</span>
+        </div>
       </div>
     </div>
   )
@@ -182,7 +197,7 @@ export default function SabhiChef() {
 
   return (
     <div style={{ background: '#fffdf7', color: INK, fontFamily: 'Nunito, sans-serif', overflowX: 'hidden', cursor: 'none' }}>
-      <CustomCursor accentColor={O} ringBorder="rgba(244,123,64,.45)" ringBorderHov={O} />
+      <CustomCursor accentColor={O} ringBorder="rgba(244,123,64,.5)" ringBorderHov="#FEE472" ringStyle="dashed" />
       <CsNavbar accentColor={O} bgScrolled="rgba(255,249,237,.97)" textColor={INK} mutedColor={BR} ctaTextColor="#fff" />
 
       {/* ════ HERO ════ */}
@@ -196,43 +211,53 @@ export default function SabhiChef() {
         <div style={{ position: 'absolute', top: -80, right: -80, width: 500, height: 500, borderRadius: '50%', background: O, opacity: .15, pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: -80, left: '22%', width: 320, height: 320, borderRadius: '50%', background: R, opacity: .07, pointerEvents: 'none' }} />
 
-        <div style={{ position: 'relative', zIndex: 2, padding: '0 clamp(24px,5vw,64px) clamp(48px,6vw,88px)', width: '100%' }}>
-          {/* Tag */}
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: 'white', border: `2.5px solid ${BR}`, borderRadius: 40,
-            padding: '7px 18px', fontFamily: 'Nunito, sans-serif',
-            fontSize: '.7rem', fontWeight: 900, letterSpacing: '.14em',
-            color: BR, textTransform: 'uppercase', marginBottom: '1.75rem',
-            boxShadow: `3px 3px 0 ${BR}`,
-          }}>
-            <div style={{ width: 7, height: 7, background: O, borderRadius: '50%' }} />
-            Case Study — Brand &amp; Product Design
+        <div className="hero-grid" style={{ position: 'relative', zIndex: 2, padding: '0 clamp(24px,5vw,64px) clamp(48px,6vw,88px)', width: '100%', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div>
+            {/* Tag */}
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              background: 'white', border: `2.5px solid ${BR}`, borderRadius: 40,
+              padding: '7px 18px', fontFamily: 'Nunito, sans-serif',
+              fontSize: '.7rem', fontWeight: 900, letterSpacing: '.14em',
+              color: BR, textTransform: 'uppercase', marginBottom: '1.75rem',
+              boxShadow: `3px 3px 0 ${BR}`,
+            }}>
+              <div style={{ width: 7, height: 7, background: O, borderRadius: '50%' }} />
+              Case Study — Brand &amp; Product Design
+            </div>
+
+            <h1 style={{
+              fontFamily: 'Nunito, sans-serif',
+              fontSize: 'clamp(3.8rem,8.5vw,9rem)',
+              fontWeight: 900, lineHeight: .9, color: BR,
+              letterSpacing: '-.03em', marginBottom: '2rem',
+            }}>
+              Sabhi<span style={{ color: R }}>Chef</span><br />
+              <em style={{ fontStyle: 'italic', fontWeight: 300, color: G }}>Brand</em>
+            </h1>
+
+            <div className="hero-flex" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.95rem', fontWeight: 700, lineHeight: 1.7, color: '#5a3010', maxWidth: 420 }}>
+                Website, packaging, social media, and brand identity — for a homemade food brand born from a mother's kitchen.
+              </p>
+              <div className="hero-pill-group" style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem' }}>
+                {['🌐 Website Design', '📦 Packaging', '📸 Social Media', '🎨 Illustration'].map((pill, i) => (
+                  <span key={i} style={{
+                    background: 'white', border: `2.5px solid ${BR}`, borderRadius: 30,
+                    padding: '8px 16px', fontFamily: 'Nunito, sans-serif',
+                    fontSize: '.68rem', fontWeight: 900, color: BR,
+                    boxShadow: `3px 3px 0 ${BR}`, whiteSpace: 'nowrap',
+                  }}>{pill}</span>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <h1 style={{
-            fontFamily: 'Nunito, sans-serif',
-            fontSize: 'clamp(3.8rem,8.5vw,9rem)',
-            fontWeight: 900, lineHeight: .9, color: BR,
-            letterSpacing: '-.03em', marginBottom: '2rem',
-          }}>
-            Sabhi<span style={{ color: R }}>Chef</span><br />
-            <em style={{ fontStyle: 'italic', fontWeight: 300, color: G }}>Brand</em>
-          </h1>
-
-          <div className="hero-flex" style={{ display: 'flex', alignItems: 'flex-end', gap: '4rem', flexWrap: 'wrap' }}>
-            <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.95rem', fontWeight: 700, lineHeight: 1.7, color: '#5a3010', maxWidth: 380 }}>
-              Website, packaging, social media, and brand identity — for a homemade food brand born from a mother's kitchen.
-            </p>
-            <div className="hero-pill-group" style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginLeft: 'auto' }}>
-              {['🌐 Website Design', '📦 Packaging', '📸 Social Media', '🎨 Illustration'].map((pill, i) => (
-                <span key={i} style={{
-                  background: 'white', border: `2.5px solid ${BR}`, borderRadius: 30,
-                  padding: '8px 16px', fontFamily: 'Nunito, sans-serif',
-                  fontSize: '.68rem', fontWeight: 900, color: BR,
-                  boxShadow: `3px 3px 0 ${BR}`, whiteSpace: 'nowrap',
-                }}>{pill}</span>
-              ))}
+          <div className="hero-img-col" style={{ position: 'relative', height: '100%', minHeight: 400, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ position: 'relative', width: '100%', maxWidth: 480, aspectRatio: '1/1' }}>
+               <img src="/Sabhi Chef/Mockups/Masala KHichdi.jpg" alt="Khichdi" style={{ position: 'absolute', width: '60%', top: '10%', left: '0', borderRadius: 24, border: `3px solid ${INK}`, boxShadow: `6px 6px 0 ${INK}`, transform: 'rotate(-6deg)', zIndex: 1 }} />
+               <img src="/Sabhi Chef/Mockups/Matki Misal.jpg" alt="Misal" style={{ position: 'absolute', width: '65%', top: '25%', right: '0', borderRadius: 24, border: `3px solid ${INK}`, boxShadow: `6px 6px 0 ${INK}`, transform: 'rotate(4deg)', zIndex: 3 }} />
+               <img src="/Sabhi Chef/Mockups/Moong Chilla.jpg" alt="Chilla" style={{ position: 'absolute', width: '55%', bottom: '-10%', left: '15%', borderRadius: 24, border: `3px solid ${INK}`, boxShadow: `6px 6px 0 ${INK}`, transform: 'rotate(-2deg)', zIndex: 2 }} />
             </div>
           </div>
         </div>
@@ -349,41 +374,11 @@ export default function SabhiChef() {
 
             <div style={{ display: 'flex', gap: '1.25rem' }}>
               <div style={{ flex: 1, border: `3px solid ${INK}`, borderRadius: 20, overflow: 'hidden', boxShadow: `5px 5px 0 ${INK}` }}>
-                <img src="/Sabhi Chef/Logo/Asset 6@2x.png" alt="Primary Logo" style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#fff' }} />
+                <img src="/Sabhi Chef/Logo/Asset 6@2x.png" alt="Primary Logo" style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#fff', padding: 'clamp(2rem, 5vw, 4rem)' }} />
               </div>
             </div>
 
-            {/* Logo on dark + light */}
-            <div className="logo-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
-              {/* Dark bg */}
-              <div style={{ border: `3px solid ${INK}`, borderRadius: 20, overflow: 'hidden', boxShadow: `5px 5px 0 ${INK}` }}>
-                <div style={{ background: INK, borderRadius: 14, padding: '1.4rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <div>
-                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1.8rem', fontWeight: 900, color: Y, letterSpacing: '-.02em' }}>Sabhi <span style={{ color: O }}>Chef</span></div>
-                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 900, letterSpacing: '.18em', textTransform: 'uppercase', color: OL, marginTop: 2 }}>Homely Food in Minutes</div>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'flex-end' }}>
-                    <div style={{ width: 36, height: 4, background: Y, borderRadius: 2 }} />
-                    <div style={{ width: 24, height: 4, background: O, borderRadius: 2 }} />
-                    <div style={{ width: 16, height: 4, background: G, borderRadius: 2 }} />
-                  </div>
-                </div>
-              </div>
-              {/* Light bg */}
-              <div style={{ border: `3px solid ${INK}`, borderRadius: 20, overflow: 'hidden', boxShadow: `5px 5px 0 ${INK}` }}>
-                <div style={{ background: Y, borderRadius: 14, padding: '1.4rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <div>
-                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1.35rem', fontWeight: 900, color: BR, lineHeight: 1 }}>Sabhi Chef</div>
-                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.45rem', fontWeight: 900, letterSpacing: '.16em', textTransform: 'uppercase', color: G, marginTop: 3 }}>Homely Food in Minutes</div>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 3, alignItems: 'flex-end' }}>
-                    <div style={{ width: 30, height: 4, background: BR, borderRadius: 2 }} />
-                    <div style={{ width: 20, height: 4, background: O, borderRadius: 2 }} />
-                    <div style={{ width: 14, height: 4, background: G, borderRadius: 2 }} />
-                  </div>
-                </div>
-              </div>
-            </div>
+
 
           </div>
         </div>
@@ -410,83 +405,7 @@ export default function SabhiChef() {
           </div>
           {/* Body */}
           <div style={{ background: Y }}>
-            {/* Mini nav */}
-            <div style={{ background: 'rgba(255,249,237,.97)', borderBottom: `2.5px solid ${INK}`, padding: '.65rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.9rem', fontWeight: 900, color: BR }}>Sabhi <span style={{ color: O }}>Chef</span></div>
-              <div style={{ display: 'flex', gap: '.5rem' }}>
-                {['Products', 'Our Story', 'Contact'].map(l => (
-                  <span key={l} style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.52rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '.08em', padding: '4px 10px', borderRadius: 20, color: INK }}>{l}</span>
-                ))}
-                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.52rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '.08em', padding: '4px 10px', borderRadius: 20, color: 'white', background: O, border: `2px solid ${INK}`, boxShadow: `2px 2px 0 ${INK}` }}>Shop Now →</span>
-              </div>
-            </div>
-            {/* Hero strip */}
-            <div className="browser-hero-strip" style={{ position: 'relative', minHeight: 300, background: Y, padding: '1.5rem', display: 'flex', alignItems: 'flex-end', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: -30, right: -30, width: 160, height: 160, borderRadius: '50%', background: O, opacity: .15 }} />
-              <div style={{ position: 'relative', zIndex: 2 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1.5rem', fontWeight: 900, color: BR, lineHeight: 1, letterSpacing: '-.02em' }}><span style={{ color: R }}>Ghar ka</span><br />Khana</div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.6rem', fontWeight: 700, color: '#5a3010', margin: '.3rem 0 .6rem' }}>Homemade mixes. No preservatives. Ready in 5 minutes.</div>
-                <div style={{ display: 'flex', gap: '.4rem' }}>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.52rem', fontWeight: 900, padding: '5px 11px', borderRadius: 20, border: `2px solid ${INK}`, background: R, color: 'white', boxShadow: `2px 2px 0 ${INK}` }}>Shop Now →</span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.52rem', fontWeight: 900, padding: '5px 11px', borderRadius: 20, border: `2px solid ${INK}`, background: 'white', color: BR }}>Our Story</span>
-                </div>
-              </div>
-              {/* Stat card */}
-              <div className="browser-stat-card" style={{ position: 'absolute', top: '1.25rem', right: '1.5rem', background: 'white', border: `2.5px solid ${INK}`, borderRadius: 12, padding: '.75rem 1rem', boxShadow: `4px 4px 0 ${INK}`, zIndex: 3 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '1.1rem', fontWeight: 900, color: O, lineHeight: 1 }}>5 min</div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.42rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '.08em', color: BR }}>Avg. Cook Time</div>
-              </div>
-              {/* Mini product inset */}
-              <div className="browser-mockup-inset" style={{ position: 'absolute', bottom: '1rem', right: '1rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '.5rem', width: '45%', zIndex: 2 }}>
-                {[
-                  { emoji: '🥣', bg: '#ffecd4', name: 'Khichdi', price: '₹150' },
-                  { emoji: '🫓', bg: '#e0f5e8', name: 'Chila',   price: '₹150' },
-                  { emoji: '🍛', bg: '#ffe0d0', name: 'Misal',   price: '₹250' },
-                  { emoji: '🎂', bg: '#fce8e8', name: 'Cake',    price: '₹150' },
-                ].map((p, i) => (
-                  <div key={i} style={{ background: 'white', border: `2px solid ${INK}`, borderRadius: 10, overflow: 'hidden', boxShadow: `2px 2px 0 ${INK}` }}>
-                    <div style={{ height: 52, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem', background: p.bg }}>{p.emoji}</div>
-                    <div style={{ padding: '4px 6px', display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.44rem', fontWeight: 900, color: INK }}>{p.name}</span>
-                      <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.44rem', fontWeight: 900, color: G }}>{p.price}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Filter bar */}
-            <div style={{ background: CREAM, borderTop: `2px solid rgba(30,15,0,.08)`, padding: '.6rem 1.5rem', display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
-              {['All', 'Breakfast', 'Meals', 'Sweet & Drinks', 'Condiments'].map((f, i) => (
-                <span key={f} style={{
-                  fontFamily: 'Nunito, sans-serif', fontSize: '.48rem', fontWeight: 900,
-                  textTransform: 'uppercase', padding: '4px 10px', borderRadius: 20,
-                  border: i === 0 ? 'none' : `2px solid ${BR}`, color: i === 0 ? 'white' : BR,
-                  background: i === 0 ? O : 'transparent',
-                  boxShadow: i === 0 ? `2px 2px 0 ${INK}` : 'none',
-                }}>{f}</span>
-              ))}
-            </div>
-            {/* Product strip */}
-            <div style={{ background: 'white', borderTop: `2.5px solid ${INK}`, padding: '.75rem 1.5rem', display: 'flex', gap: '.6rem', overflowX: 'auto', alignItems: 'center' }}>
-              <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.52rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '.08em', color: BR, whiteSpace: 'nowrap', marginRight: '.35rem' }}>Products</span>
-              {[
-                { emoji: '🥣', bg: '#ffecd4', name: 'Khichdi', price: '₹150' },
-                { emoji: '🫓', bg: '#e0f5e8', name: 'Chila',   price: '₹150' },
-                { emoji: '🍛', bg: '#ffe0d0', name: 'Misal',   price: '₹250' },
-                { emoji: '⚡', bg: '#fffbe0', name: 'Poha',    price: '₹100' },
-                { emoji: '🎂', bg: '#fce8e8', name: 'Cake',    price: '₹150' },
-                { emoji: '☕', bg: '#fff4d6', name: 'Kahwa',   price: '₹150' },
-                { emoji: '🥞', bg: '#e0f5e8', name: 'Pancake', price: '₹150' },
-              ].map((p, i) => (
-                <div key={i} style={{ flexShrink: 0, width: 68, background: CREAM, border: `2px solid ${INK}`, borderRadius: 9, overflow: 'hidden', boxShadow: `2px 2px 0 ${INK}` }}>
-                  <div style={{ height: 42, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', background: p.bg }}>{p.emoji}</div>
-                  <div style={{ padding: '3px 5px', display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.44rem', fontWeight: 900, color: INK }}>{p.name}</span>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: '.44rem', fontWeight: 900, color: G }}>{p.price}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <img src="/Sabhi Chef/image.png" alt="Sabhi Chef Website" style={{ width: '100%', display: 'block' }} />
           </div>
         </div>
       </section>
@@ -514,7 +433,7 @@ export default function SabhiChef() {
       </section>
 
       {/* ════ SOCIAL MEDIA ════ */}
-      <section style={{ background: O, borderTop: `3px solid ${INK}`, borderBottom: `3px solid ${INK}`, padding: 'clamp(56px,9vw,112px) clamp(24px,5vw,64px)' }}>
+      <section data-cursor-zone="dark" style={{ background: O, borderTop: `3px solid ${INK}`, borderBottom: `3px solid ${INK}`, padding: 'clamp(56px,9vw,112px) clamp(24px,5vw,64px)' }}>
         <div className="sc-reveal" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '3rem', flexWrap: 'wrap', gap: '2rem' }}>
           <div>
             <Tag style={{ background: 'rgba(254,228,114,.2)', borderColor: 'rgba(254,228,114,.4)', color: Y }}>Social Media</Tag>
@@ -682,6 +601,8 @@ export default function SabhiChef() {
         .sc-reveal.visible { opacity: 1; transform: translateY(0); }
         
         @media (max-width: 768px) {
+          .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          .hero-img-col { min-height: 280px !important; margin-top: 2rem; }
           .hero-flex { align-items: flex-start !important; gap: 2rem !important; }
           .hero-pill-group { margin-left: 0 !important; }
           .logo-grid { grid-template-columns: 1fr !important; }

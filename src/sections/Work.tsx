@@ -19,7 +19,7 @@ const works = [
   { file: 'motion-graphics', label: 'Motion Graphics', cat: 'Motion Graphics · Film', title: 'Volta Energy Brand Film', year: '2025', bg: 'linear-gradient(135deg,#040c14,#0a1e2e,#143050)', image: undefined, span: false },
 ]
 
-export default function Work() {
+export default function Work({ hideHeader = false }: { hideHeader?: boolean }) {
   const navigate = useNavigate()
   const accent = '#FF6B35'
   const muted = 'rgba(245,240,232,0.4)'
@@ -28,22 +28,27 @@ export default function Work() {
   return (
     <section id="work" style={{ background: '#111111', borderBottom: `1px solid ${rule}` }}>
       {/* Header */}
-      <div className="px-6 pt-16 pb-10 md:px-14 md:pt-24 md:pb-14 lg:pt-28 lg:pb-14">
-        <p className="sec-label flex items-center gap-4" style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 5, textTransform: 'uppercase', color: accent, marginBottom: 32 }}>
-          02 · Selected Work
-        </p>
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(32px,5vw,64px)', letterSpacing: -2, lineHeight: .95, color: '#F5F0E8' }}>
-            Work that speaks<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>for itself.</em>
-          </h2>
-          <a href="#contact"
-            className="reveal rd2 cursor-none no-underline transition-all duration-250 self-start sm:self-auto"
-            style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: '#F5F0E8', border: `1px solid ${rule}`, padding: '14px 32px', whiteSpace: 'nowrap' }}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = accent; e.currentTarget.style.color = accent }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = rule; e.currentTarget.style.color = '#F5F0E8' }}
-          >View All Work</a>
+      {!hideHeader && (
+        <div className="px-6 pb-14 md:px-14 md:pb-20 lg:pb-20" style={{ paddingTop: 'clamp(48px, 6vw, 96px)' }}>
+          <div className="flex items-center gap-4" style={{ marginBottom: 32 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 16px', border: `1px solid rgba(255,107,53, .2)`, borderRadius: 100, background: 'rgba(255,107,53, .05)' }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: accent, display: 'inline-block', boxShadow: `0 0 8px ${accent}` }} />
+              <span style={{ fontFamily: 'Syne, sans-serif', fontSize: 9, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', color: accent }}>Selected Work</span>
+            </div>
+          </div>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <h2 className="reveal" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 'clamp(32px,5vw,64px)', letterSpacing: -2, lineHeight: .95, color: '#F5F0E8' }}>
+              Work that speaks<br /><em style={{ fontFamily: 'DM Serif Display, serif', fontStyle: 'italic', fontWeight: 400, color: accent }}>for itself.</em>
+            </h2>
+            <a href="#contact"
+              className="reveal rd2 cursor-none no-underline transition-all duration-250 self-start sm:self-auto"
+              style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: '#F5F0E8', border: `1px solid ${rule}`, padding: '14px 32px', whiteSpace: 'nowrap' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = accent; e.currentTarget.style.color = accent }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = rule; e.currentTarget.style.color = '#F5F0E8' }}
+            >View All Work</a>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Work grid — mobile: 1 col, tablet: 2 col, desktop: 3 col with span */}
       {/* Mobile/tablet: simple uniform grid */}

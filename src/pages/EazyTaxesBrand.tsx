@@ -71,7 +71,7 @@ export default function EazyTaxesBrand() {
 
   return (
     <div style={{ background: WHITE, color: INK, fontFamily: 'Aileron, sans-serif', fontWeight: 300, overflowX: 'hidden', cursor: 'none' }}>
-      <CustomCursor accentColor={TEAL} ringBorder="rgba(63,185,203,.45)" ringBorderHov={TEAL} />
+      <CustomCursor accentColor={TEAL} ringBorder="rgba(63,185,203,.4)" ringBorderHov={TEAL} dotShape="square" ringStyle="dashed" ringShape="square" />
       <CsNavbar accentColor={TEAL} bgScrolled="rgba(255,255,255,.95)" textColor={INK} mutedColor={INK_LIGHT} ctaTextColor="#fff" />
 
       {/* ════ HERO ════ */}
@@ -93,9 +93,9 @@ export default function EazyTaxesBrand() {
               <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', color: TEAL }}>Brand Identity · 12 Weeks · 2025</span>
             </div>
 
-            <h1 className="reveal" style={{ fontSize: 'clamp(40px, 5.5vw, 76px)', fontWeight: 900, letterSpacing: '-2.5px', lineHeight: .92, color: INK, marginBottom: 24, transitionDelay: '.1s' }}>
+            <h1 className="reveal" style={{ fontFamily: '"Eloran", "Playfair Display", serif', fontSize: 'clamp(40px, 5.5vw, 76px)', fontWeight: 900, letterSpacing: '-2.5px', lineHeight: .92, color: INK, marginBottom: 24, transitionDelay: '.1s' }}>
               <span style={{ color: INK }}>eazy</span><span style={{ color: TEAL }}>taxes</span><br />
-              <span style={{ color: TEAL, fontStyle: 'normal', fontWeight: 'inherit' }}>Brand Evolution</span>
+              <span style={{ fontFamily: 'Aileron, sans-serif', color: TEAL, fontStyle: 'normal', fontWeight: 'inherit', fontSize: '0.8em', letterSpacing: '-1.5px' }}>Brand Evolution</span>
             </h1>
 
             <p className="reveal" style={{ fontSize: 'clamp(15px, 1.3vw, 17px)', lineHeight: 1.8, color: INK_LIGHT, maxWidth: 480, marginBottom: 44, fontWeight: 300, transitionDelay: '.18s' }}>
@@ -146,7 +146,7 @@ export default function EazyTaxesBrand() {
               animation: 'etFloatCard 5s ease-in-out infinite', position: 'relative',
             }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${TEAL}, ${TEAL_LIGHT})`, borderRadius: '24px 24px 0 0' }} />
-              <div style={{ fontFamily: 'Aileron, sans-serif', fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 900, letterSpacing: -2, lineHeight: 1 }}>
+              <div style={{ fontFamily: '"Eloran", "Playfair Display", serif', fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 900, letterSpacing: -2, lineHeight: 1 }}>
                 <span style={{ color: INK }}>eazy</span><span style={{ color: TEAL }}>taxes</span>
               </div>
               <div style={{ display: 'flex', gap: 8 }}>
@@ -313,7 +313,7 @@ export default function EazyTaxesBrand() {
                 style={{ padding: 'clamp(40px, 5vw, 72px) clamp(24px, 3vw, 48px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 20, minHeight: 200, transition: 'background .3s', background: v.bg, border: v.border, cursor: 'none', transitionDelay: `${i * .1}s` }}
                 onMouseEnter={e => { if (v.bg === 'transparent') e.currentTarget.style.background = 'rgba(67,147,166,.1)' }}
                 onMouseLeave={e => { if (v.bg === 'transparent') e.currentTarget.style.background = 'transparent' }}>
-                <div style={{ fontFamily: 'Aileron, sans-serif', fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, letterSpacing: -1, textAlign: 'center' }}>
+                <div style={{ fontFamily: '"Eloran", "Playfair Display", serif', fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 700, letterSpacing: -1, textAlign: 'center' }}>
                   <span style={{ color: v.eazy }}>eazy</span><span style={{ color: v.taxes }}>taxes</span>
                 </div>
                 <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: '4px', textTransform: 'uppercase', color: v.labelColor, textAlign: 'center' }}>{v.label}</div>
